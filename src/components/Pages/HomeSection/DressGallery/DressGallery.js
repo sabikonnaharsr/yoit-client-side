@@ -1,8 +1,10 @@
 import React from 'react';
+import PrimaryButton from '../../../PrimaryButton/PrimaryButton';
 
 const DressGallery = () => {
     return (
         <div>
+            <PrimaryButton>JSDFK</PrimaryButton>
             <h1 className='text-3xl font-bold mb-4'>Dress Gallery</h1>
             <section className="py-6 dark:bg-gray-800 dark:text-gray-50">
                 <div className="container grid grid-cols-2 gap-4 p-4 mx-auto md:grid-cols-4">
