@@ -5,7 +5,6 @@ import Login from "../../Login/Login/Login";
 import SignUp from "../../Login/SignUp/SignUp";
 import Appointment from "../../Pages/AppointmentSection/Appointment/Appointment";
 import Blogs from "../../Pages/Blogs/Blogs";
-import BabiesAllCloth from "../../Pages/CategorySection/BabiesAllCloth/BabiesAllCloth";
 import LadiesClothes from "../../Pages/CategorySection/LadiesClothes/LadiesClothes";
 import Dashboard from "../../Pages/DashboardSection/Dashboard/Dashboard";
 import MyAppointment from "../../Pages/DashboardSection/MyAppointment/MyAppointment";
@@ -42,10 +41,7 @@ export const router = createBrowserRouter([
         path: '/ladiesClothes',
         element: <LadiesClothes></LadiesClothes>
       },
-      {
-        path: '/babiesAllCloth',
-        element: <BabiesAllCloth></BabiesAllCloth>
-      }
+     
       
     ],
   },

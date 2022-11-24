@@ -1,6 +1,6 @@
 import React from 'react';
 
-const BabiesAllCloth = () => {
+const BabiesClothDetail = () => {
     return (
         <div>
             <div className="rounded-md shadow-md sm:w-96 dark:bg-gray-900 dark:text-gray-100">
@@ -71,4 +71,4 @@ const BabiesAllCloth = () => {
     );
 };
 
-export default BabiesAllCloth;
+export default BabiesClothDetail;

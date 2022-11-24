@@ -12,38 +12,29 @@ const Banner = () => {
                     <img
                         alt="House"
                         src="https://images.unsplash.com/photo-1486401049719-c73f3d070305?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
-                        class="absolute inset-0 h-full w-full object-cover"
-                    />
+                        class="absolute inset-0 h-full w-full object-cover"/>
                     </div>
                 </div>
                 {/* this is text */}
                 <div class="relative flex items-center bg-gray-100">
                     <span
-                    class="hidden lg:absolute lg:inset-y-0 lg:-left-16 lg:block lg:w-16 lg:bg-gray-100"
-                    ></span>
-
+                    class="hidden lg:absolute lg:inset-y-0 lg:-left-16 lg:block lg:w-16 lg:bg-gray-100">
+                    </span>
                     <div class="p-8 sm:p-16 lg:p-24">
-                    <h2 class="text-2xl font-bold sm:text-3xl">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore,
-                        debitis.
+                    <h2 class="text-2xl font-bold text-pink-500 sm:text-3xl">
+                      Some human cultures, traditionally make their clothing  entirely of prepared and
                     </h2>
-
                     <p class="mt-4 text-gray-600">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid,
-                        molestiae! Quidem est esse numquam odio deleniti, beatae, magni
-                        dolores provident quaerat totam eos, aperiam architecto eius quis
-                        quibusdam fugiat dicta.
+                    <span className='text-7xl font-bold text-pink-700'>Clothing</span>also known as clothes, apparel, and attire are items worn on the body. Typically, clothing is made of fabrics or textiles, but over time it has included garments made from animal skin and other thin sheets of materials and natural products found in the environment, put together. The wearing of clothing is mostly restricted to human beings and is a feature of all human societies. The amount and type of clothing worn depends on gender, body type, social factors, and geographic considerations. Garments cover the body, 
                     </p>
-
                     <a
                         href="/"
-                        class="mt-8 inline-block rounded border border-indigo-600 bg-indigo-600 px-12 py-3 text-sm font-medium text-white hover:bg-transparent hover:text-indigo-600 focus:outline-none focus:ring active:text-indigo-500"
-                    >
+                        class="mt-8 inline-block rounded border border-white-600 bg-pink-600 px-12 py-3 text-sm font-medium text-white hover:bg-transparent hover:text-pink-600 focus:outline-none focus:ring active:text-indigo-500">
                         Get in Touch
                     </a>
                     </div>
                 </div>
-                </div>
+              </div>
             </div>
           </section>
         </div>

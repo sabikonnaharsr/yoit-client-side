@@ -3,8 +3,8 @@ import { ToastContainer, toast } from "react-toastify";
 import { FaBeer } from "react-icons/fa";
 import Banner from "../Banner/Banner";
 import DressGallery from "../DressGallery/DressGallery";
+import Card from "../../Card/Card";
 import LadiesClothes from "../../CategorySection/LadiesClothes/LadiesClothes";
-import BabiesClothes from "../../CategorySection/BabiesClothes/BabiesClothes";
 
 
 
@@ -15,7 +15,7 @@ const Home = () => {
       <Banner></Banner>
       <DressGallery></DressGallery>
       <LadiesClothes></LadiesClothes>
-      <BabiesClothes></BabiesClothes>
+      <Card></Card>
     </div>
   );
 };

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const BabiesAllClothes = () => {
+const BabiesClothesDetails = () => {
     return (
         <div>
             {/* map hobe 2 ta product dekhabo aladea page e */}
@@ -8,4 +8,4 @@ const BabiesAllClothes = () => {
     );
 };
 
-export default BabiesAllClothes;
+export default BabiesClothesDetails;
