@@ -3,7 +3,9 @@ import BabiesCloth from '../BabiesCloth/BabiesCloth';
 
 const BabiesClothes = () => {
     return (
-        <div className="max-w-sm bg-white border border-gray-200   dark:bg-gray-800 dark:border-gray-700">
+        <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4">
+          <BabiesCloth></BabiesCloth>
+          <BabiesCloth></BabiesCloth>
           <BabiesCloth></BabiesCloth>
         </div>
     );
