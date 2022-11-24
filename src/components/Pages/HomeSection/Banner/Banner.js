@@ -22,7 +22,7 @@ const Banner = () => {
                     </span>
                     <div class="p-8 sm:p-16 lg:p-24">
                     <h2 class="text-2xl font-bold text-pink-500 sm:text-3xl">
-                      Some human cultures, traditionally make their clothing  entirely of prepared and
+                      Some human cultures, traditionally make their clothing  entirely of prepared.
                     </h2>
                     <p class="mt-4 text-gray-600">
                     <span className='text-7xl font-bold text-pink-700'>Clothing</span>also known as clothes, apparel, and attire are items worn on the body. Typically, clothing is made of fabrics or textiles, but over time it has included garments made from animal skin and other thin sheets of materials and natural products found in the environment, put together. The wearing of clothing is mostly restricted to human beings and is a feature of all human societies. The amount and type of clothing worn depends on gender, body type, social factors, and geographic considerations. Garments cover the body, 
