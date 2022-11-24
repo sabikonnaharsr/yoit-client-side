@@ -6,7 +6,7 @@ import { PhotoProvider, PhotoView } from "react-photo-view";
 const DressGallery = () => {
     return (
         <div>
-            <h1 className='text-3xl font-bold mb-4'>Dress Gallery</h1>
+            <h1 className='text-3xl font-bold mb-4 font-GreatVibes'>Dress Gallery</h1>
             <section className="py-6 dark:bg-gray-800 dark:text-gray-50">
                 <div className="container grid grid-cols-2 gap-4 p-4 mx-auto md:grid-cols-4">
                   <PhotoProvider>

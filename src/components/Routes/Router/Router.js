@@ -7,6 +7,7 @@ import Appointment from "../../Pages/AppointmentSection/Appointment/Appointment"
 import Blogs from "../../Pages/Blogs/Blogs";
 import BabiesClothDetail from "../../Pages/CategorySection/BabieClothDetail/BabiesClothDetail";
 import LadiesClothes from "../../Pages/CategorySection/LadiesClothes/LadiesClothes";
+import MensClothDetail from "../../Pages/CategorySection/MensClothDetail/MensClothDetail";
 import Dashboard from "../../Pages/DashboardSection/Dashboard/Dashboard";
 import MyAppointment from "../../Pages/DashboardSection/MyAppointment/MyAppointment";
 import ErrorPage from "../../Pages/ErrorPage/ErrorPage";
@@ -45,6 +46,10 @@ export const router = createBrowserRouter([
       {
         path: '/babiesClothDetail',
         element: <BabiesClothDetail></BabiesClothDetail>
+      },
+      {
+        path: '/mensClothDetail',
+        element: <MensClothDetail></MensClothDetail>
       }
      
       

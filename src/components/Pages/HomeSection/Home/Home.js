@@ -6,7 +6,7 @@ import Banner from "../Banner/Banner";
 import DressGallery from "../DressGallery/DressGallery";
 import BabiesClothes from "../../../Pages/CategorySection/BabiesClothes/BabiesClothes"
 import MensClothes from "../../../Pages/CategorySection/MensClothes/MensClothes";
-
+import LadiesClothesDetails from "../../../Pages/CategorySection/LadiesClothesDetail/LadiesClothesDetail";
 
 
 const Home = () => {
@@ -17,6 +17,7 @@ const Home = () => {
       <LadiesClothes></LadiesClothes>
        <BabiesClothes></BabiesClothes>
       <MensClothes></MensClothes>
+      <LadiesClothesDetails></LadiesClothesDetails>
     </div>
   );
 };
