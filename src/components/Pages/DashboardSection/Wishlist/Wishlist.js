@@ -2,10 +2,10 @@ import { useQuery } from '@tanstack/react-query';
 import React, { useContext } from 'react';
 import { AuthContext } from '../../../Contexts/AuthProvider';
 
-const MyAppointment = () => {
+const Wishlist = () => {
     const {user}= useContext(AuthContext);
 
-    const url = `http://localhost:5000/bookings?email=${user?.email}`
+    const url = `http://localhost:5000/get-wishlist`
     const {data: bookings = [] } = useQuery({
         queryKey: ['bookings', user?.email],
         queryFn: async () => {
@@ -16,7 +16,7 @@ const MyAppointment = () => {
     })
     return (
         <div>
-            <h3 className='text-blue-700 text-3xl mt-6 text-center  mb-6 font-medium'>My Appointment</h3>
+            <h3 className='text-blue-700 text-3xl mt-6 text-center  mb-6 font-medium'>Wishlist</h3>
             <div>
             <div className="overflow-x-auto ">
                 <table className="table w-full">
@@ -24,21 +24,32 @@ const MyAppointment = () => {
                     <thead>
                     <tr>
                         <th></th>
+                        <th>Img</th>
                         <th>Name</th>
                         <th>Treatment</th>
                         <th>Date</th>
                         <th>Time</th>
+                        <th>Payment</th>
+                       
                     </tr>
                     </thead>
                     <tbody>
                          {
                             bookings.map((booking, i) =>
                             <tr key={booking._id} className="hover">
+                              
                                 <th>{i+1}</th>
-                                <td>{booking.patient}</td>
-                                <td>{booking.treatment}</td>
-                                <td>{booking.appointmentDate}</td>
-                                <td>{booking.slot}</td>
+                                <th><div className="avatar">
+                                <div className="w-16 rounded-full">
+                                    <img alt='' src={booking.img} />
+                                </div>
+                                </div></th>
+                                <td>{booking.name}</td>
+                                <td>{booking.old_price}</td>
+                                <td>{booking.sell_price}</td>
+                                <td>{booking.time}</td>
+                                <td>{booking.location}</td>
+                                <td><button className='btn btn-ghost'>pay</button></td>
                             </tr>)
                          }
                     </tbody>
@@ -49,4 +60,4 @@ const MyAppointment = () => {
     );
 };
 
-export default MyAppointment;
+export default Wishlist;

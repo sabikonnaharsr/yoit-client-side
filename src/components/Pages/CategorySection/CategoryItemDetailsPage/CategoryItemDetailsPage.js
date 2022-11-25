@@ -1,17 +1,47 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import BookingModal from '../BookingModal/BookingModal';
 import { FaGratipay,  FaStarHalfAlt, FaRegPlusSquare } from "react-icons/fa";
+import { AuthContext } from '../../../Contexts/AuthProvider';
+import toast from "react-hot-toast";
 
 
 const CategoryItemDetailsPage = () => {
+  const { user } = useContext(AuthContext)
   const [booking, setBooking] = useState([]);
  console.log(booking);
    const detailsProduct = useLoaderData();
 
    const {name, img, description, seller_price, old_price, ratings, location} = detailsProduct;
 
+   const handleWishlist = (product) => {
+    const wishlistProduct = {...product, productId: product._id, email: user?.email || 'example@gmail.com', time: new Date().toLocaleString()}
 
+    delete wishlistProduct._id
+    fetch('http://localhost:5000/wishlist',{
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify(wishlistProduct)
+    }
+    )
+  
+    .then(res => res.json())
+    .then(data => {console.log(data)
+      if(data.acknowledged){
+        toast.success('This product is successfully add in wishlist')
+      }else{
+        toast.error(data.message)
+      }
+    
+    })
+    .catch(error => console.error(error));
+
+
+   }
+
+    
     return (
         <div>
            <h1 className='text-6xl text-center text-cyan-500 mt-7 font-GreatVibes'>Welcome to our'S Collection...</h1>
@@ -25,7 +55,9 @@ const CategoryItemDetailsPage = () => {
                       <br className="hidden md:block" />
                       </h2>
                         <div className='flex gap-4 text-2xl hover:text-primary mb-3 text-black'>
-                        <FaGratipay></FaGratipay>
+                         <div onClick={() => handleWishlist(detailsProduct)}>
+                         <FaGratipay></FaGratipay>
+                         </div>
                         <label   
                             onClick={() => setBooking(detailsProduct)} htmlFor="booking-modal" className="hover:text-primary mb-3 text-black">
                             <FaRegPlusSquare></FaRegPlusSquare>

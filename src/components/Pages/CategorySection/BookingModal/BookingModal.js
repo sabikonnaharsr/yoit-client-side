@@ -25,7 +25,7 @@ const BookingModal = ({ booking }) => {
 
     }
     console.log(booking)
-    toast.success('Booking Confirmed')
+    // toast.success('Booking Confirmed')
 
 
     fetch('http://localhost:5000/bookings', {
@@ -39,7 +39,6 @@ const BookingModal = ({ booking }) => {
     .then(data => {
       console.log(data);
      if(data.acknowledged){
-      // setTreatment(null) 
       toast.success('Booking Confirmed')
       // refetch() 
      }
