@@ -16,8 +16,8 @@ const Wishlist = () => {
     })
     return (
         <div>
-             <h2 className='text-slate-700 text-3xl mt-6 text-center mb-3 font-semibold'>Please select your product</h2>
-            <h3 className='text-pink-500 text-3xl text-center mb-6 font-medium'>Add to Wishlist</h3>
+             <h2 className='text-slate-500 text-3xl mt-10 text-center mb-3 font-bold uppercase'>Please select your product</h2>
+            <h3 className='text-pink-500 uppercase text-3xl text-center mb-7 font-bold'>Add to Wishlist</h3>
             
             <div>
             <div className="overflow-x-auto ">
