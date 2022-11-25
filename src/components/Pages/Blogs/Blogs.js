@@ -1,39 +1,93 @@
-import React from 'react';
+import React from "react";
 
 const Blogs = () => {
-    return (
-        <div >
-            <h1 className='text-5xl text-slate-700 mb-3'>The Community Of Blogs</h1>
-            <p>Build and drive by the community. On a mission to make every React developer's life easier when it comes to building forms.</p>
-            <div>
-            {/* divider */}
-            <div className="flex flex-col  w-full border-opacity-50">
-              <div className="divider"></div> 
-            </div> 
-            {/* divider end */}
-            
-            </div>
-            <div className='grid gird-cols-1 md:gird-cols-3 text-start lg:grid-cols-3 gap-4'>
-            <div>
-                <h3 className='text-3xl'>Differce between</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident vel voluptatem quae laborum praesentium, possimus nam architecto fugit nisi odit aut assumenda doloribus aspernatur minus dolorem ipsa molestiae quasi corrupti a delectus. Natus repellat cupiditate eius numquam omnis dolore quis provident obcaecati optio. Ipsam tenetur architecto molestiae ad. Neque, impedit! Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab sunt sed illo ea error quisquam doloremque fugit totam quod sequi alias, nemo necessitatibus beatae consequuntur nostrum quo iure, maxime dolorum.
-                </p>
-            </div>
-            <div>
-                <h3></h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio voluptates vel soluta, omnis eum aspernatur quidem ipsa enim nemo maiores quae excepturi et voluptatibus dolorum tenetur assumenda necessitatibus. Dolorum, iusto. Animi dolorem neque sapiente nemo ut culpa, dolores voluptatum et dolor rem enim unde expedita soluta praesentium odio consequatur nihil odit? Assumenda quia officiis molestias in iusto deserunt quasi fugit cum unde. Quia, aperiam incidunt. Magni, distinctio. Neque minus, magnam, ad officia vel doloremque deleniti soluta aspernatur nisi, ex labore voluptatem. Consequatur sapiente voluptatibus tempora mollitia consectetur ut, reprehenderit veniam quod reiciendis libero voluptate quis deleniti, ex, ea nemo veritatis.</p>
-            </div>
-            <div>
-                 <h3></h3>
-                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor neque dolorem nostrum eum, repudiandae aperiam. Aliquid quam obcaecati accusantium illo. Amet, repudiandae nulla. Ratione aperiam eveniet corporis! A sunt quaerat quae magnam error excepturi tenetur voluptate in eius quos, voluptatum repellat earum quia officiis eos distinctio quis porro iure facilis quas velit commodi neque dignissimos fugit. Eius, alias deleniti aliquam asperiores ducimus sequi maiores, culpa facilis aspernatur ab harum beatae adipisci vero quod minus debitis architecto ex ipsa soluta doloribus saepe! In numquam similique sapiente non mollitia, magni vitae repellat dolorum voluptatibus laboriosam consectetur incidunt est eaque et vel minus.</p> 
-            </div>
-            <div>
-                <h3></h3>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis ad reiciendis, maxime nisi, voluptates adipisci debitis in minima obcaecati quidem nobis dolor earum. Laudantium aut, laboriosam deleniti vitae reprehenderit officia culpa tenetur. Consequuntur voluptas itaque dolor minima, accusamus ipsa nobis tempore quas dolorum adipisci assumenda atque deserunt rerum autem unde iusto. Alias molestias natus laborum totam esse sapiente voluptatum cupiditate tempore aperiam, minima vel. Hic officiis soluta totam vitae nobis.</p>
-            </div>
-            </div>
+  return (
+    <div className="w-76">
+      <h1 className="text-5xl uppercase text-center mt-10 text-slate-600 mb-3">
+        The Community Of Blogs
+      </h1>
+      <p className="text-center uppercase">
+        Build and drive by the community. On a mission to make every React
+        developer's life easier when it comes to building forms.
+      </p>
+      <div>
+        {/* divider */}
+        <div className="flex flex-col  w-full border-opacity-50">
+          <div className="divider"></div>
         </div>
-    );
+      </div>
+      <div className="grid gird-cols-1 md:gird-cols-3 text-start lg:grid-cols-3 gap-4">
+        <div>
+          <h3 className="text-xl uppercase font-bold">
+            What are the different ways to manage a state in a React
+            application?
+          </h3>
+          <p className="">
+            What is the state management in React? Beau Carnes. React state
+            management is a process for managing the data that React components
+            need in order to render themselves. This data is typically stored in
+            the component's state object. When the state object changes, the
+            component will re-render itself. React state management is basically
+            half of a React app.Which state management is best in React? React's
+            useState is the best option for local state management. If you need
+            a global state solution, the most popular ones are Redux, MobX, and
+            the built-in Context API. Your choice will depend on the size of
+            your project, your needs, and your engineers' expertise.
+          </p>
+        </div>
+        <div>
+          <h3 className="text-xl uppercase font-bold">
+            How does prototypical inheritance work?
+          </h3>
+          <p className=" ">
+            The Prototypal Inheritance is a feature in javascript used to add
+            methods and properties in objects. It is a method by which an object
+            can inherit the properties and methods of another object.
+            Traditionally, in order to get and set the [[Prototype]] of an
+            object, we use Object. getPrototypeOf and Object.The most important
+            difference between class- and prototype-based inheritance is that a
+            class defines a type which can be instantiated at runtime, whereas a
+            prototype is itself an object instance.
+          </p>
+        </div>
+        <div>
+          <h3 className="text-xl uppercase font-bold">
+            What is a unit test? Why should we write unit tests?
+          </h3>
+          <p className="">
+            The main objective of unit testing is to isolate written code to
+            test and determine if it works as intended. Unit testing is an
+            important step in the development process, because if done
+            correctly, it can help detect early flaws in code which may be more
+            difficult to find in later testing stages.A unit test is a way of
+            testing a unit - the smallest piece of code that can be logically
+            isolated in a system. In most programming languages, that is a
+            function, a subroutine, a method or property. The isolated part of
+            the definition is important.
+          </p>
+        </div>
+        <div>
+          <h3 className="text-xl font-bold uppercase justify-center">React vs. Angular vs. Vue?</h3>
+          <p className="">
+            Vue provides higher customizability and hence is easier to learn
+            than Angular or React. Further, Vue has an overlap with Angular and
+            React with respect to their functionality like the use of
+            components. Hence, the transition to Vue from either of the two is
+            an easy optionReact is better than Angular due to it's virtual DOM
+            implementation and rendering optimizations. Migrating between
+            React's versions is quite easy, too; you don't need to install
+            updates one by one, as in the case of Angular. Finally, with React,
+            developers have myriads of existing solutions they can use Angular
+            uses TypeScript and has components as its main building blocks. It
+            is component-based, whereas AngularJS uses directives. Angular's
+            operation employs a hierarchy of components, while AngularJS has
+            directives that allow code reusability. So, The AngularJS framework
+            provides reusable components for its users..
+          </p>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default Blogs;

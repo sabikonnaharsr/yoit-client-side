@@ -13,7 +13,7 @@ import MyAppointment from "../../Pages/DashboardSection/Wishlist/Wishlist";
 import ErrorPage from "../../Pages/ErrorPage/ErrorPage";
 import Home from "../../Pages/HomeSection/Home/Home";
 import ProtectedRoutes from "../ProtectedRoutes/ProtectedRoutes";
-
+import AddProduct from "../../Pages/AddProductSection/AddProduct/AddProduct"
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -54,6 +54,10 @@ export const router = createBrowserRouter([
       {
         path: "/wishlist",
         element: <Wishlist></Wishlist>
+      },
+      {
+        path: '/addProduct',
+        element: <AddProduct></AddProduct>
       }
     ],
   },
