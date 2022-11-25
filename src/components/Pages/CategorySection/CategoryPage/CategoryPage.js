@@ -10,7 +10,9 @@ const CategoryPage = () => {
     console.log(categoryData)
 
     return (
-        <div className='grid lg:grid-cols-3 md:grid-cols-2 gap-4'>           
+        <div>
+          <h1>FROM FAST FASHION TO LUXURY BRAND</h1>
+           <div className='grid lg:grid-cols-3 md:grid-cols-2 gap-4'>           
                 {
                   categoryData.length > 0 && 
                   categoryData.map(product => ( 
@@ -18,8 +20,8 @@ const CategoryPage = () => {
                   key={product._id}
                   product={product}
                   ></CategoryPageItem>))
-                }
-              
+                }    
+          </div>
         </div>
     );
 };

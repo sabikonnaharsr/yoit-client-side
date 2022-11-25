@@ -8,7 +8,7 @@ const CategoryPageItem = ({product}) => {
         <div>
         <div>
           <div>
-            <a href="/" className="group relative block bg-black">
+            <a href="/" className="group mt-10 relative block bg-black">
               <img
                 alt="Developer"
                 src={img}
