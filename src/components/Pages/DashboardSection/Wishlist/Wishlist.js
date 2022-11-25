@@ -16,7 +16,9 @@ const Wishlist = () => {
     })
     return (
         <div>
-            <h3 className='text-blue-700 text-3xl mt-6 text-center  mb-6 font-medium'>Wishlist</h3>
+             <h2 className='text-slate-700 text-3xl mt-6 text-center mb-3 font-semibold'>Please select your product</h2>
+            <h3 className='text-pink-500 text-3xl text-center mb-6 font-medium'>Add to Wishlist</h3>
+            
             <div>
             <div className="overflow-x-auto ">
                 <table className="table w-full">
@@ -24,11 +26,13 @@ const Wishlist = () => {
                     <thead>
                     <tr>
                         <th></th>
-                        <th>Img</th>
+                        <th>Image</th>
                         <th>Name</th>
-                        <th>Treatment</th>
+                        <th>Old Price</th>
+                        <th>Seller Price</th>
                         <th>Date</th>
-                        <th>Time</th>
+                        <th>Location</th>
+                        <th>Advertised</th>
                         <th>Payment</th>
                        
                     </tr>
@@ -46,10 +50,15 @@ const Wishlist = () => {
                                 </div></th>
                                 <td>{booking.name}</td>
                                 <td>{booking.old_price}</td>
-                                <td>{booking.sell_price}</td>
+                                <td>{booking.seller_price}</td>
                                 <td>{booking.time}</td>
                                 <td>{booking.location}</td>
-                                <td><button className='btn btn-ghost'>pay</button></td>
+                                <td>
+                                  <button className="btn-ghost btn w-21 btn-xs hover:text-white rounded-xxl hover:bg-pink-600 ">Advertise
+                                  </button>
+                                </td>
+                                <td><button className=' btn-ghost btn w-14 btn-xs hover:text-white rounded-xxl hover:bg-pink-600 '>pay</button></td>
+                                
                             </tr>)
                          }
                     </tbody>
