@@ -14,6 +14,9 @@ import ErrorPage from "../../Pages/ErrorPage/ErrorPage";
 import Home from "../../Pages/HomeSection/Home/Home";
 import ProtectedRoutes from "../ProtectedRoutes/ProtectedRoutes";
 import AddProduct from "../../Pages/AddProductSection/AddProduct/AddProduct"
+import MyOrders from  "../../Pages/MyOrderSection/MyOrders/MyOrders"
+
+
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -58,7 +61,11 @@ export const router = createBrowserRouter([
       {
         path: '/addProduct',
         element: <AddProduct></AddProduct>
-      }
+      },
+      {
+        path: '/myOrders',
+        element: <MyOrders></MyOrders>
+      } 
     ],
   },
   {

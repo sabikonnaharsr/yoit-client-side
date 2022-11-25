@@ -2,11 +2,11 @@ import React from "react";
 
 const Blogs = () => {
   return (
-    <div className="w-76">
+    <div className="mb-10">
       <h1 className="text-5xl uppercase text-center mt-10 text-slate-600 mb-3">
         The Community Of Blogs
       </h1>
-      <p className="text-center uppercase">
+      <p className="text-center uppercase hover:text-slate-900">
         Build and drive by the community. On a mission to make every React
         developer's life easier when it comes to building forms.
       </p>
@@ -18,11 +18,11 @@ const Blogs = () => {
       </div>
       <div className="grid gird-cols-1 md:gird-cols-3 text-start lg:grid-cols-3 gap-4">
         <div>
-          <h3 className="text-xl uppercase font-bold">
+          <h3 className="text-xl hover:text-slate-900 uppercase font-bold">
             What are the different ways to manage a state in a React
             application?
           </h3>
-          <p className="">
+          <p className="hover:text-slate-900">
             What is the state management in React? Beau Carnes. React state
             management is a process for managing the data that React components
             need in order to render themselves. This data is typically stored in
@@ -36,10 +36,10 @@ const Blogs = () => {
           </p>
         </div>
         <div>
-          <h3 className="text-xl uppercase font-bold">
+          <h3 className="text-xl hover:text-slate-900 uppercase font-bold">
             How does prototypical inheritance work?
           </h3>
-          <p className=" ">
+          <p  className="hover:text-slate-900">
             The Prototypal Inheritance is a feature in javascript used to add
             methods and properties in objects. It is a method by which an object
             can inherit the properties and methods of another object.
@@ -51,10 +51,10 @@ const Blogs = () => {
           </p>
         </div>
         <div>
-          <h3 className="text-xl uppercase font-bold">
+          <h3 className="text-xl hover:text-slate-900 uppercase font-bold">
             What is a unit test? Why should we write unit tests?
           </h3>
-          <p className="">
+          <p  className="hover:text-slate-900">
             The main objective of unit testing is to isolate written code to
             test and determine if it works as intended. Unit testing is an
             important step in the development process, because if done
@@ -67,8 +67,8 @@ const Blogs = () => {
           </p>
         </div>
         <div>
-          <h3 className="text-xl font-bold uppercase justify-center">React vs. Angular vs. Vue?</h3>
-          <p className="">
+          <h3 className="text-xl hover:text-slate-900 font-bold uppercase justify-center">React vs. Angular vs. Vue?</h3>
+          <p  className="hover:text-slate-900">
             Vue provides higher customizability and hence is easier to learn
             than Angular or React. Further, Vue has an overlap with Angular and
             React with respect to their functionality like the use of

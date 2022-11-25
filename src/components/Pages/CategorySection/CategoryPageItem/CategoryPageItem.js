@@ -1,4 +1,5 @@
 import React from 'react';
+import { FaArrowAltCircleRight, FaArrowRight } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 const CategoryPageItem = ({product}) => {
@@ -8,7 +9,7 @@ const CategoryPageItem = ({product}) => {
         <div>
         <div>
           <div>
-            <a href="/" className="group mt-10 mb-10 relative block bg-black">
+            <a href="/" className="group mt-10 mb-10 relative block bg-slate-700">
               <img
                 alt="Developer"
                 src={img}
@@ -22,13 +23,13 @@ const CategoryPageItem = ({product}) => {
 
                 <div className="mt-64">
                   <div className="translate-y-8 transform opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100">
-                    <p className="text-sm text-white">
+                    <p className=" text-white text-xs uppercase">
                      { description}
                       <p className="text-sm text-white">Ratings: {ratings}</p>
                       <div>
                         <Link to={`/productDetails/${_id}`}>
-                          <button className=" py-1 px-3 font-GreatVibes text-rose-600 text-4xl bg-slate-800 rounded-md">
-                           Details
+                          <button className=" py-1 px-3 text-pink-600 text-2xl">
+                          <FaArrowRight></FaArrowRight>
                           </button>
                         </Link>
                       </div>

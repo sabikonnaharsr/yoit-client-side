@@ -111,7 +111,7 @@ const Navbar = () => {
               </Link>
 
               <Link
-                to="/myProduct"
+                to="/myOrders"
                 className="block h-16 border-b-4 border-transparent leading-[4rem] hover:border-current hover:text-pink-600"
               >
                 My Orders

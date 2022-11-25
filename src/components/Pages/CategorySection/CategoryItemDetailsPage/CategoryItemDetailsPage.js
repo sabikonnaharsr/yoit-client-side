@@ -50,29 +50,29 @@ const CategoryItemDetailsPage = () => {
                 <div className="flex flex-col justify-center">
                    <div className="max-w-xl mb-6">
                      <div className='flex justify-between items-center'>
-                      <h2 className=" max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none">
+                      <h2 className=" max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-gray-600 sm:text-4xl uppercase sm:leading-none">
                       {name}
                       <br className="hidden md:block" />
                       </h2>
-                        <div className='flex gap-4 text-2xl hover:text-primary mb-3 text-black'>
+                        <div className='flex gap-4 text-2xl hover:text-primary mb-3 text-slate-700'>
                          <div onClick={() => handleWishlist(detailsProduct)}>
                          <FaGratipay></FaGratipay>
                          </div>
                         <label   
-                            onClick={() => setBooking(detailsProduct)} htmlFor="booking-modal" className="hover:text-primary mb-3 text-black">
+                            onClick={() => setBooking(detailsProduct)} htmlFor="booking-modal" className="hover:text-primary mb-3 text-slate-700">
                             <FaRegPlusSquare></FaRegPlusSquare>
                         </label>
                       </div>
                      
                      </div>
                     
-                     <p className='font-semibold'>Release Price: {seller_price}</p>
-                     <p className='font-semibold'>Old Price: {old_price}</p>
-                     <span className="inline-block font-semibold text-deep-purple-accent-400">
+                     <p className='font-semibold uppercase'>Release Price: {seller_price}</p>
+                     <p className='font-semibold uppercase'>Old Price: {old_price}</p>
+                     <span className="inline-block uppercase font-semibold text-deep-purple-accent-400">
                         Ratings: {ratings}
                      </span>
-                     <p className='font-semibold'>Location: {location}</p>
-                     <p className="text-base text-gray-700 md:text-lg">
+                     <p className='font-bold uppercase'>Location: {location}</p>
+                     <p className="text-base uppercase text-gray-700">
                     {description}
                     </p>
                    
