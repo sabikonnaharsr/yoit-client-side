@@ -112,7 +112,7 @@ const Navbar = () => {
               </Link>
 
               <Link
-                to="/myReview"
+                to="/wishlist"
                 className="block h-16 border-b-4 border-transparent leading-[4rem] hover:border-current hover:text-red-700"
               >
                 Wishlist

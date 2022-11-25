@@ -8,6 +8,7 @@ import AllCategories from "../../Pages/CategorySection/AllCategories/AllCategori
 import CategoryItemDetailsPage from "../../Pages/CategorySection/CategoryItemDetailsPage/CategoryItemDetailsPage";
 import CategoryPage from "../../Pages/CategorySection/CategoryPage/CategoryPage";
 import Dashboard from "../../Pages/DashboardSection/Dashboard/Dashboard";
+import Wishlist from "../../Pages/DashboardSection/Wishlist/Wishlist";
 import MyAppointment from "../../Pages/DashboardSection/Wishlist/Wishlist";
 import ErrorPage from "../../Pages/ErrorPage/ErrorPage";
 import Home from "../../Pages/HomeSection/Home/Home";
@@ -50,6 +51,10 @@ export const router = createBrowserRouter([
         loader: ({ params }) =>
           fetch(`http://localhost:5000/productDetails/${params.id}`),
       },
+      {
+        path: "/wishlist",
+        element: <Wishlist></Wishlist>
+      }
     ],
   },
   {

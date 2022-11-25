@@ -4,7 +4,7 @@ import Banner from "../Banner/Banner";
 import DressGallery from "../DressGallery/DressGallery";
 import ProductGallery from "../../../Pages/HomeSection/DressGallery/ProductGallery";
 import AllCategories from "../../CategorySection/AllCategories/AllCategories";
-import MyAppointment from "../../DashboardSection/Wishlist/Wishlist";
+
 
 const Home = () => {
   return (
@@ -13,7 +13,6 @@ const Home = () => {
       <DressGallery></DressGallery>
       <ProductGallery></ProductGallery>
       <AllCategories></AllCategories>
-      <MyAppointment></MyAppointment>
     </div>
   );
 };
