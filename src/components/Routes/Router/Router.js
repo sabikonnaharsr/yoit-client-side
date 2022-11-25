@@ -5,8 +5,13 @@ import Login from "../../Login/Login/Login";
 import SignUp from "../../Login/SignUp/SignUp";
 import Appointment from "../../Pages/AppointmentSection/Appointment/Appointment";
 import Blogs from "../../Pages/Blogs/Blogs";
+import AllCategories from "../../Pages/CategorySection/AllCategories/AllCategories";
 import BabiesClothDetail from "../../Pages/CategorySection/BabieClothDetail/BabiesClothDetail";
+import CategoryItemDetailsPage from "../../Pages/CategorySection/CategoryItemDetailsPage/CategoryItemDetailsPage";
+import CategoryPage from "../../Pages/CategorySection/CategoryPage/CategoryPage";
+import LadiesClotheDetails from "../../Pages/CategorySection/LadiesClotheDetails/LadiesClotheDetails";
 import LadiesClothes from "../../Pages/CategorySection/LadiesClothes/LadiesClothes";
+import LadiesClothesDetail from "../../Pages/CategorySection/LadiesClothesDetail/LadiesClothesDetail";
 import MensClothDetail from "../../Pages/CategorySection/MensClothDetail/MensClothDetail";
 import Dashboard from "../../Pages/DashboardSection/Dashboard/Dashboard";
 import MyAppointment from "../../Pages/DashboardSection/MyAppointment/MyAppointment";
@@ -36,23 +41,20 @@ export const router = createBrowserRouter([
         element: <Blogs></Blogs>,
       },
       {
-        path: '/appointment',
-        element: <Appointment></Appointment>
+        path: '/allCategories',
+        // loader: ()=> fetch('http://localhost:5000/productCollection'),
+        element: <AllCategories></AllCategories>
       },
       {
-        path: '/ladiesClothes',
-        element: <LadiesClothes></LadiesClothes>
+        path: '/categoryPage/:id',
+        element: <CategoryPage></CategoryPage>,
+        loader: ({params}) => fetch(`http://localhost:5000/categories/${params.id}`)
       },
       {
-        path: '/babiesClothDetail',
-        element: <BabiesClothDetail></BabiesClothDetail>
-      },
-      {
-        path: '/mensClothDetail',
-        element: <MensClothDetail></MensClothDetail>
+        path: '/productDetails/:id',
+        element: <CategoryItemDetailsPage></CategoryItemDetailsPage>,
+        loader: ({params}) => fetch(`http://localhost:5000/productDetails/${params.id}`)
       }
-     
-      
     ],
   },
   {

@@ -9,9 +9,12 @@ module.exports = {
       {
         DancingScript: ['Dancing Script', "cursive"],
         GreatVibes:['Great Vibes', 'cursive'],
-        Tangerine:['Tangerine', 'cursive']
+        Tangerine:['Tangerine', 'cursive'],
+
       }
     },
   },
   plugins: [require("daisyui")],
 }
+
+

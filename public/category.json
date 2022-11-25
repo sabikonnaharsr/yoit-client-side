@@ -1,0 +1,32 @@
+[
+        { 
+      "product_id": 1,
+        "img": "https://img.freepik.com/free-photo/ecstatic-white-girl-beret-posing-with-amazement-elegant-caucasian-female-model-t-shirt-standing-red-wall_197531-11462.jpg?w=996&t=st=1669285542~exp=1669286142~hmac=33bcb2cf42a915952377dd9447dd9e70b7af081719fa3bd9ba6f87fd96315422",
+        "name": "Women Collection",
+        "seller_price": "640",
+        "old_price": "1390",
+        "location": "Panthapath",
+        "ratings": 2.3,
+        "description": "Women's dresses had gone to great extremes in the 1920s, with very short hemlines and boyish styles. The change in dress styles in the 1930s was thus very dramatic, for the decade saw a return to femininity and distinct changes in cut and hemline. The depressed economic circumstances of the decade and later of the war years required simplicity in dress styles, but talented designers turned these constraints to their advantage"
+    },
+    {
+        "product_id": 2,
+        "img": "https://t3.ftcdn.net/jpg/05/45/18/74/240_F_545187405_9bQ6ie3j5BiV2ASwgqyViFD2E0V23Q7M.jpg",
+        "name": "Mens Collection",
+        "seller_price": "400",
+        "old_price": "1560",
+        "location": "Panthapath",
+        "ratings": 2.3,
+        "description": "Although dress codes are designed to provide guidance on what to wear, they can often make choosing an outfit more complex. With all their rules and requirements, navigating your way through each form of attire can be incredibly challenging. Luckily, you no longer have to go in alone because we’re here to help. In this article, we break down the most common dress codes, such as cocktail attire, smart casual, black tie, and more, to ensure your every outfit is on-point. Here is our guide to men’s dress codes for all occasions."
+    },{
+        "product_id": 3,
+        "img": "https://img.freepik.com/free-photo/blonde-toddler-sitting-carpet-playing-with-blue-car_114579-2898.jpg?size=626&ext=jpg&ga=GA1.2.1510053171.1664396538&semt=sph",
+        "name": "Baby Collection",
+        "seller_price": "1200",
+        "location": "Panthapath",
+        "old_price": "3200",
+        "ratings": 2.3,
+        "description": "Infant and toddler clothing size is typically based on age.[1] These are usually preemie for a preterm birth baby, 0 to 3 months, 3 to 6 months, 6 to 9 months, 9 to 12 months, 12 months, 18 months, and 24 months, though there is no industry standard definition for those sizes.[1] Most retailers provide sizing charts based on a child's weight, height, or both, and the child's weight and height percentile may also be used for properly sizing clothing for the infant.[1] In an article in the October 1945 issue of Ladies' Home Journal, B. F. Skinner stated that clothing and bedding interfere with normal exercise and growth and keep the baby from taking comfortable postures or changing posture during sleep"
+    }
+    
+]

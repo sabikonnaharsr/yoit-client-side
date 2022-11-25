@@ -3,7 +3,7 @@ import BabiesCloth from '../BabiesCloth/BabiesCloth';
 
 const BabiesClothes = () => {
     return (
-        <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4">
+        <div className="w-11/12 mx-auto py-16 grid lg:grid-cols-3 md:grid-cols-2 gap-4">
           <BabiesCloth></BabiesCloth>
           <BabiesCloth></BabiesCloth>
           <BabiesCloth></BabiesCloth>
