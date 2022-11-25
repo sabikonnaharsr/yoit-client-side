@@ -1,8 +1,11 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
+
 import CategoryPageItem from '../CategoryPageItem/CategoryPageItem';
 
 const CategoryPage = () => {
+
+ 
     const categoryData = useLoaderData();
     console.log(categoryData)
 
@@ -16,6 +19,7 @@ const CategoryPage = () => {
                   product={product}
                   ></CategoryPageItem>))
                 }
+              
         </div>
     );
 };

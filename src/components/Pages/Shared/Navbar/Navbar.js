@@ -40,10 +40,10 @@ const Navbar = () => {
                   <Link to="/">Home</Link>
                 </li>
                 <li>
-                  <Link to="/about">About</Link>
+                  <Link to="/myReview">My Product</Link>
                 </li>
                 <li>
-                  <Link to="/myReview">My Review</Link>
+                  <Link to="/myReview">Add Product</Link>
                 </li>
                 <li>
                   <Link to="/appointments">Appointments</Link>
@@ -98,24 +98,24 @@ const Navbar = () => {
               </Link>
 
               <Link
-                to="/about"
+                to="/addProduct"
                 className="block h-16 border-b-4 border-transparent leading-[4rem] hover:border-current hover:text-red-700"
               >
-                About
+                Add Product
               </Link>
 
               <Link
-                to="/appointment"
+                to="/myProduct"
                 className="block h-16 border-b-4 border-transparent leading-[4rem] hover:border-current hover:text-red-700"
               >
-                Appointment
+                My Orders
               </Link>
 
               <Link
                 to="/myReview"
                 className="block h-16 border-b-4 border-transparent leading-[4rem] hover:border-current hover:text-red-700"
               >
-                My Review
+                Advertised
               </Link>
 
               <Link

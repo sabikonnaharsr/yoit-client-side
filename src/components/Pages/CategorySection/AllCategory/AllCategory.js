@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const AllCategory = ({ category }) => {
   console.log(category);
-  const { name, img, description, price, _id } = category;
+  const { name, img, price, _id } = category;
 
   return (
     <div>

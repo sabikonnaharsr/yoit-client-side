@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Allbuyer = () => {
+const AllBuyer = () => {
     return (
         <div>
             
@@ -8,4 +8,4 @@ const Allbuyer = () => {
     );
 };
 
-export default Allbuyer;
+export default AllBuyer;
