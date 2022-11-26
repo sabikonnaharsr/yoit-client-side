@@ -44,7 +44,8 @@ const CategoryItemDetailsPage = () => {
     
     return (
         <div>
-           <h1 className='text-5xl font-bold text-center text-cyan-500 mt-10'>LE ITALIAN WIDE LEG OVERALL</h1>
+           <h1 className='text-5xl font-bold text-center mb-2 text-cyan-500 mt-10 hover:text-pink-600'>LE ITALIAN WIDE LEG OVERALL</h1>
+           <p className='text-2xl text-center text-cyan-500 hover:text-pink-600'>100% Cotton Made in Italy Designer Model Number: DS01B7527MAC Designer Color: 53</p>
            <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
              <div className="grid gap-12 row-gap-8 lg:grid-cols-2">
                 <div className="flex flex-col justify-center">

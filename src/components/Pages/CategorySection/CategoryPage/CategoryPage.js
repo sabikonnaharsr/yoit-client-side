@@ -12,8 +12,8 @@ const CategoryPage = () => {
     return (
         <div>
            <div className='text-center mt-10 mb-8 font-semibold'>
-             <h1 className='text-center text-pink-500 text-3xl mb-3 font-bold'>FROM FAST FASHION TO LUXURY BRAND</h1>
-              <p>WITH A POWERFUL SEARCH ENGINE YOU CAN DISCOVER ALMOST EVERY BRAND ON THE EARTH, <br /> FROM 'JARA TO GUCCI. WE EMBRACE ENJOY A WIDE RANGE OF STYLE AND BRAND.</p>
+             <h1 className='text-center hover:text-slate-600 text-pink-500 text-3xl mb-3 font-bold'>FROM FAST FASHION TO LUXURY BRAND</h1>
+              <p className='hover:text-pink-600'>WITH A POWERFUL SEARCH ENGINE YOU CAN DISCOVER ALMOST EVERY BRAND ON THE EARTH, <br /> FROM 'JARA TO GUCCI. WE EMBRACE ENJOY A WIDE RANGE OF STYLE AND BRAND.</p>
            </div>
            <div className='grid lg:grid-cols-3 md:grid-cols-2 gap-4'>           
                 {

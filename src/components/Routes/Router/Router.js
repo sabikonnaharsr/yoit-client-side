@@ -9,7 +9,6 @@ import CategoryItemDetailsPage from "../../Pages/CategorySection/CategoryItemDet
 import CategoryPage from "../../Pages/CategorySection/CategoryPage/CategoryPage";
 import Dashboard from "../../Pages/DashboardSection/Dashboard/Dashboard";
 import Wishlist from "../../Pages/DashboardSection/Wishlist/Wishlist";
-import MyAppointment from "../../Pages/DashboardSection/Wishlist/Wishlist";
 import ErrorPage from "../../Pages/ErrorPage/ErrorPage";
 import Home from "../../Pages/HomeSection/Home/Home";
 import ProtectedRoutes from "../ProtectedRoutes/ProtectedRoutes";
@@ -78,7 +77,7 @@ export const router = createBrowserRouter([
     children: [
       {
         path: "/dashboard",
-        element: <MyAppointment></MyAppointment>,
+        // element: <Wishlist></Wishlist>,
       },
     ],
   },
