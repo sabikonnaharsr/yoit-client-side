@@ -1,45 +1,77 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import UseTitle from "../../../Hooks/UseTitle"
 import 'react-toastify/dist/ReactToastify.css';
 import toast from "react-hot-toast";
-  
+import { useForm } from 'react-hook-form';
+import { AuthContext } from '../../../Contexts/AuthProvider';
+import { format } from 'date-fns';
 
 const AddProduct = () => {
-    UseTitle('Add Product')
-
-   const addProducts = (e) => {
-    e.preventDefault();
-    const form = e.target;
-    const title = form.title.value;
-    const price = form.price.value;
-    const email = form.email.value;
-    const img = form.img.value;
-    console.log(title,email, price, img)
-    const data = {
-      title: title, 
-      price: price,  
-      img: img
-    }
-
-    fetch('https://sequel-extract-server.vercel.app/allServices', {
-      method: 'POST',
-      headers: {
-          'content-type': 'application/json'
-      },
-      body: JSON.stringify(data),
+    const {user} = useContext(AuthContext);
+    const { register, handleSubmit, formState: { errors }, } = useForm();
+    UseTitle('Add Product');
+    const date = new  Date()
+    const today = format(date, 'PP')
+    const addProducts = (data) => {
+    const image = data.imgFile[0];
+    const productName = data.name;
+    const phoneNumber = data.phoneNumber;
+    const price = data.sellerPrice;
+    const oldPrice = data.oldPrice;
+    const category =parseInt( data.category);
+    const opinion = data.opinion;
+    const message = data.message;
+    const sellerName = data.sellerName;
+    const location = data.location;
+    
+    console.log(image)
+    const formData = new FormData();
+    formData.append('image', image )
+    fetch(`https://api.imgbb.com/1/upload?key=${process.env.REACT_APP_imgbb_key}`, {
+        method: 'POST',
+        body: formData
     })
     .then(res => res.json())
-    .then(data => 
+    .then(imgData =>{ 
+        if(imgData.success){
+            const productData = {
+                name: productName,
+                img: imgData.data.url, 
+                seller_price: price,
+                phoneNumber ,
+                old_price: oldPrice,
+                product_id: category ,
+                opinion,
+                description: message,
+                location: location,
+                sellerName ,
+                ratings: 5,
+                postTime: today
+    
+            }
+            fetch('http://localhost:5000/addProduct', {
+                method: 'POST',
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(productData)
+            })
+            .then(res => res.json())
+            .then(data => console.log(data))
+            .catch(error => {console.error(error)
+                if(data.acknowledged){ 
       
-      {
-        if(data.acknowledged){ 
-        //   alert("your review is successfully worked!");
-        toast.success('you successfully added your product')
-          form.reset();  
-            
+                    toast.success('you successfully added your product')
+                     
+                    .catch((er) => console.error(er.message));
+                    }
+                   
+            })
         }
+        console.log(imgData)
     })
-    .catch((er) => console.error(er.message));
+
+
    }
  
 
@@ -52,8 +84,7 @@ const AddProduct = () => {
     >
       <img
         alt="Pattern"
-        src="https://portraitgallery-vt.com/wp-content/uploads/2021/11/emily-ben-final_980.gif"
-        className="absolute inset-0 h-full w-full object-cover"
+        src=""
       />
     </aside>
 
@@ -64,7 +95,7 @@ const AddProduct = () => {
       <div className="max-w-xl lg:max-w-3xl">
         <a className="block text-blue-600" href="/">
           <span className="sr-only">Home</span>
-              <img src="https://portraitgallery-vt.com/wp-content/uploads/2021/11/angelyce-philip-final_980x.gif" alt="" />
+              <img src="" alt="" />
         </a>
 
         <h1
@@ -77,19 +108,19 @@ const AddProduct = () => {
            Thank your being with us and also we are here to give you the best price.
         </p>
 
-        <form onSubmit={addProducts} action="/" className="mt-8 grid grid-cols-6 gap-6">
+        <form onSubmit={handleSubmit(addProducts)} action="/" className="mt-8 grid grid-cols-6 gap-6">
           <div className="col-span-6 sm:col-span-3">
             <label
               for="FirstName"
               className="block text-sm font-medium text-gray-50"
             >
-              Title
+              Name
             </label>
-
             <input
               type="text"
-              id="title"
+              id=""
               name="text"
+              {...register('name')}
               className="mt-1 w-full border-gray-900 bg-gray-700 text-white shadow-sm"
             />
           </div>
@@ -98,31 +129,99 @@ const AddProduct = () => {
             <label
               name= "price"
               for="price"
-              class="block text-sm font-medium text-gray-50"
+              class="block text-sm font-medium text-gray-50"   
             >
               Price
             </label>
+            <input
+              type="text"
+              id="price"
+              name="sellerPrice"
+              class="mt-1 w-full border-gray-900 bg-gray-700 text-gray-50 shadow-sm"
+              {...register('sellerPrice')}
+            />
+          </div>
 
+          <div className="col-span-6 sm:col-span-3">
+            <label
+              name= "oldPrice"
+              for="price"
+              class="block text-sm font-medium text-gray-50"  
+            >
+             Old Price
+            </label>
             <input
               type="text"
               id="price"
               name="price"
               class="mt-1 w-full border-gray-900 bg-gray-700 text-gray-50 shadow-sm"
+              {...register('oldPrice')}
             />
           </div>
 
-          {/* <div className="col-span-6">
+          <div className="col-span-6 sm:col-span-3">
             <label for="Email" className="block text-sm font-medium text-gray-50">
-              Email
+              Phone Number
             </label>
-
             <input
-              type="email"
-              id="Email"
-              name="email"
+              type="Phone Number"
+              id=""
+              name="phoneNumber"
               className="mt-1 w-full border-gray-900 bg-gray-700 text-white shadow-sm"
+              {...register('phoneNumber')} 
             />
-          </div> */}
+          </div>
+          
+
+          <div className="col-span-6 sm:col-span-3">
+            <label for="Email" className="block text-sm font-medium text-gray-50">
+              put your opinion
+            </label>
+                <select {...register('opinion')}  className="select  select-bordered w-full max-w-xs">
+                <option disabled selected>Conditional Type</option>
+                <option value='excellent'>Excellent</option>
+                <option value='good'>Good</option>
+                <option value='fair'>Fair</option>
+                </select>
+           </div>
+
+          <div className="col-span-6 sm:col-span-3">
+            <label for="Email" className="block text-sm font-medium text-gray-50">
+              location
+            </label>
+            <input
+              type="text"
+              id=""
+              name="location"
+              className="mt-1 w-full border-gray-900 bg-gray-700 text-white shadow-sm"
+              {...register('location')} 
+            />
+          </div>
+
+          <div className="col-span-6 sm:col-span-3">
+            <label for="Email" className="block text-sm font-medium text-gray-50">
+              Years of use
+            </label>
+            <input
+              type="text"
+              id=""
+              name="years"
+              className="mt-1 w-full border-gray-900 bg-gray-700 text-white shadow-sm"
+              {...register('years')} 
+            />
+          </div>
+
+          <div className="col-span-6 sm:col-span-3">
+            <label for="Email" className="block text-sm font-medium text-gray-50">
+              Category
+            </label>
+                <select {...register('category')} className="select select-bordered w-full max-w-xs">
+                <option disabled selected>Conditional Type</option>
+                <option value='1'>Women Collection</option>
+                <option value='2'>Men Collection</option>
+                <option value='3'>Baby Collection</option>
+           </select>
+          </div>
 
           <div className="col-span-6 sm:col-span-3">
             <label
@@ -131,12 +230,13 @@ const AddProduct = () => {
             >
               Email
             </label>
-
             <input
               type="text"
               id="email"
               name="email"
-              className="mt-1 w-full border-gray-900 bg-gray-700 text-gray-700 shadow-sm"
+              disabled
+              defaultValue={user?.email}
+              className="mt-1 w-full border-gray-900 bg-gray-700 text-gray-50 shadow-sm"
             />
           </div>
 
@@ -145,15 +245,33 @@ const AddProduct = () => {
               for="PasswordConfirmation"
               className="block text-sm font-medium text-gray-50"
             >
-             Image
+             Picture
             </label>
+            <input type="file" name='imgFile'  {...register('imgFile')} className="file-input file-input-bordered file-input-info w-full max-w-xs" />
+          </div>
+          
 
+          <div className="col-span-6 sm:col-span-3">
+            <label for="Email" className="block text-sm font-medium text-gray-50">
+              Seller Name
+            </label>
             <input
-              type=""
-              id="text"
-              name="img"
-              className="mt-1 w-full border-gray-900 bg-gray-700  text-gray-50 shadow-sm"
+              type="text"
+              id=""
+              
+              defaultValue={user?.displayName}
+              name="sellerName"
+              className="mt-1 w-full border-gray-900 bg-gray-700 text-white shadow-sm"
+              {...register('sellerName')} 
             />
+          </div>
+
+          <div className="col-span-6 w-full">
+            <label for="Email"  className="block  text-sm font-medium text-gray-50">
+              Message
+            </label>
+            <textarea  {...register('message')}  className="textarea w-full textarea-bordered" placeholder="type your message">  
+            </textarea>
           </div>
 
           <div className="col-span-6">
@@ -164,7 +282,6 @@ const AddProduct = () => {
                 name="marketing_accept"
                 className="h-5 w-5 rounded-md border-gray-900 bg-gray-700 shadow-sm"
               />
-
               <span className="text-sm text-gray-50">
                 I want to receive emails about events, product updates and
                 company announcements.
@@ -189,13 +306,12 @@ const AddProduct = () => {
             >
               Create an account
             </button>
-          
-
             <p className="mt-4 text-sm text-gray-500 sm:mt-0">
               Already have an account?
               <a href="/" className="text-gray-700 underline">Log in</a>.
             </p>
           </div>
+
         </form>
       </div>
     </main>

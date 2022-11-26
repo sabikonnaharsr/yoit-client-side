@@ -62,7 +62,11 @@ export const router = createBrowserRouter([
       {
         path: '/myOrders',
         element: <MyOrders></MyOrders>
-      } 
+      } ,
+      {
+        path: "/addProduct",
+        element: <AddProduct></AddProduct>
+      }
     ],
   },
   {
@@ -77,10 +81,10 @@ export const router = createBrowserRouter([
         path: "/dashboard",
         element: <Wishlist></Wishlist>,
       },
-      {
-        path: "/dashboard",
-        element: <AddProduct></AddProduct>
-      },
+      // {
+      //   path: "/dashboard/addProduct",
+      //   element: <AddProduct></AddProduct>
+      // },
     ],
   },
 
