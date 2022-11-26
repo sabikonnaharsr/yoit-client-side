@@ -12,7 +12,7 @@ const CategoryItemDetailsPage = () => {
  console.log(booking);
    const detailsProduct = useLoaderData();
 
-   const {name, img, description, seller_price, old_price, ratings, location} = detailsProduct;
+   const {name, img, description, seller_price, old_price, ratings, location, _id} = detailsProduct;
 
    const handleWishlist = (product) => {
     const wishlistProduct = {...product, productId: product._id, email: user?.email || 'example@gmail.com', time: new Date().toLocaleString()}
@@ -92,6 +92,7 @@ const CategoryItemDetailsPage = () => {
                     alt=""
                   />
                 </div>
+                <Link to={`/payment/${_id}`}>checkout</Link>
             </div>
         </div>
         <div>

@@ -14,6 +14,7 @@ import Home from "../../Pages/HomeSection/Home/Home";
 import ProtectedRoutes from "../ProtectedRoutes/ProtectedRoutes";
 import MyOrders from  "../../Pages/MyOrderSection/MyOrders/MyOrders"
 import AddProduct from "../../Pages/DashboardSection/AddProduct/AddProduct";
+import Payment from "../../Pages/DashboardSection/Payment/Payment";
 // import AddProduct from "../../Pages/DashboardSection/AddProduct/AddProduct";
 
 
@@ -66,7 +67,12 @@ export const router = createBrowserRouter([
       {
         path: "/addProduct",
         element: <AddProduct></AddProduct>
-      }
+      },
+      {
+        path:'/payment/:id',
+        element:<Payment/>,
+        loader: ({params}) => fetch(`http://localhost:5000/productDetails/${params.id}`)
+       }
     ],
   },
   {

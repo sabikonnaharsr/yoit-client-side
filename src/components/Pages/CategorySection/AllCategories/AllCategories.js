@@ -17,7 +17,7 @@ const AllCategories = () => {
         <div>
            <div className='w-11/12 mx-auto py-16 grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-4"'>
             {
-                categories.map(category =><AllCategory
+                categories?.map(category =><AllCategory
                 key={category._id}
                 category={category}
                 ></AllCategory>)

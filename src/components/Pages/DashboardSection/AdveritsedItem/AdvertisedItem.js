@@ -1,15 +1,18 @@
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import toast from "react-hot-toast";
-import Spinner from "../../Shared/Spinner";
-import BookingModal from "../BookingModal/BookingModal";
-import AdvertiseCard from "./AdvertiseCard";
+import { AuthContext } from "../../../Contexts/AuthProvider";
+// import AdvertiseCard from "../AdvertiseCard/AdvertiseCard";
+// import Spinner from "../../Shared/Spinner";
+// import BookingModal from "../BookingModal/BookingModal";
+
 
 const AdvertisedIem = () => {
+  const {user} = useContext(AuthContext)
   // const [categoriesData, setCategoriesData] = useState([]);
-  const [modalData, setModalData] = useState([]);
-  const [modalOpenClose, setModalOpenClose] = useState(null);
+  // const [modalData, setModalData] = useState([]);
+  // const [modalOpenClose, setModalOpenClose] = useState(null);
 
   const {
     data: categoriesData = [],
@@ -18,13 +21,13 @@ const AdvertisedIem = () => {
   } = useQuery({
     queryKey: ["bookings"],
     queryFn: async () => {
-      const res = await fetch("http://localhost:5000/advertise-products", {});
+      const res = await fetch(`http://localhost:5000/advertise-products/${user?.email}`, { });
       const data = await res.json();
       return data;
     },
   });
   if (isLoading) {
-    return <Spinner />;
+    return <div>loading...</div>;
   }
 
   return (
@@ -38,25 +41,20 @@ const AdvertisedIem = () => {
           </h1>
         </div>
       )}
-      {categoriesData.length > 0 && (
+     
         <div className="grid lg:grid-cols-3 justify-center gap-10 lg:w-[75%] mx-auto mt-10 py-16">
-          {categoriesData.map((ads, inx) => (
-            <AdvertiseCard
-              key={inx}
-              ads={ads}
-              setModalOpenClose={setModalOpenClose}
-              setModalData={setModalData}
-            ></AdvertiseCard>
-          ))}
+          {/* {categoriesData.map((product, inx) => (
+            
+          ))} */}
         </div>
-      )}
-      {modalOpenClose && (
+     
+      {/* {modalOpenClose && (
         <BookingModal
           setModalOpenClose={setModalOpenClose}
           modalData={modalData}
           refetch={refetch}
         />
-      )}
+      )} */}
     </div>
   );
 };
