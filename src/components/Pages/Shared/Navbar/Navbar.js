@@ -94,7 +94,7 @@ const Navbar = () => {
                 to="/"
                 className="block h-16 font-bold text-6xl border-b-4 border-transparent leading-[4rem] hover:border-current hover:text-pink-600"
               >
-                Yoit
+                <span className="text-pink-600 text-5xl">Y</span>oit
               </Link>
               <Link
                 to="/"
@@ -103,7 +103,7 @@ const Navbar = () => {
                 Home
               </Link>
 
-              <Link
+              {/* <Link
                 to="/addProduct"
                 className="block h-16 border-b-4 border-transparent leading-[4rem] hover:border-current hover:text-pink-600"
               >
@@ -122,7 +122,7 @@ const Navbar = () => {
                 className="block h-16 border-b-4 border-transparent leading-[4rem] hover:border-current hover:text-pink-600"
               >
                 Wishlist
-              </Link>
+              </Link> */}
 
               <Link
                 to="/blogs"

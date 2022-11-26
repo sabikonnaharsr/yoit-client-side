@@ -7,13 +7,14 @@ import Blogs from "../../Pages/Blogs/Blogs";
 import AllCategories from "../../Pages/CategorySection/AllCategories/AllCategories";
 import CategoryItemDetailsPage from "../../Pages/CategorySection/CategoryItemDetailsPage/CategoryItemDetailsPage";
 import CategoryPage from "../../Pages/CategorySection/CategoryPage/CategoryPage";
-import Dashboard from "../../Pages/DashboardSection/Dashboard/Dashboard";
+// import Dashboard from "../../Pages/DashboardSection/Dashboard/Dashboard";
 import Wishlist from "../../Pages/DashboardSection/Wishlist/Wishlist";
 import ErrorPage from "../../Pages/ErrorPage/ErrorPage";
 import Home from "../../Pages/HomeSection/Home/Home";
 import ProtectedRoutes from "../ProtectedRoutes/ProtectedRoutes";
-import AddProduct from "../../Pages/AddProductSection/AddProduct/AddProduct"
 import MyOrders from  "../../Pages/MyOrderSection/MyOrders/MyOrders"
+import AddProduct from "../../Pages/DashboardSection/AddProduct/AddProduct";
+// import AddProduct from "../../Pages/DashboardSection/AddProduct/AddProduct";
 
 
 export const router = createBrowserRouter([
@@ -57,10 +58,7 @@ export const router = createBrowserRouter([
         path: "/wishlist",
         element: <Wishlist></Wishlist>
       },
-      {
-        path: '/addProduct',
-        element: <AddProduct></AddProduct>
-      },
+     
       {
         path: '/myOrders',
         element: <MyOrders></MyOrders>
@@ -77,7 +75,11 @@ export const router = createBrowserRouter([
     children: [
       {
         path: "/dashboard",
-        // element: <Wishlist></Wishlist>,
+        element: <Wishlist></Wishlist>,
+      },
+      {
+        path: "/dashboard",
+        element: <AddProduct></AddProduct>
       },
     ],
   },

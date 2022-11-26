@@ -4,6 +4,7 @@ import Banner from "../Banner/Banner";
 import DressGallery from "../DressGallery/DressGallery";
 import ProductGallery from "../../../Pages/HomeSection/DressGallery/ProductGallery";
 import AllCategories from "../../CategorySection/AllCategories/AllCategories";
+// import AddService from "../../AddService";
 
 
 const Home = () => {
@@ -13,6 +14,7 @@ const Home = () => {
       <DressGallery></DressGallery>
       <ProductGallery></ProductGallery>
       <AllCategories></AllCategories>
+      {/* <AddService></AddService> */}
     </div>
   );
 };
