@@ -1,38 +1,47 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import BookingModal from '../../CategorySection/BookingModal/BookingModal';
+import React, { useState } from "react";
+import BookingModal from "../../CategorySection/BookingModal/BookingModal";
 
+const ShowAdvertise = ({ product }) => {
+  const [booking, setBooking] = useState([]);
+  console.log(booking);
 
-const ShowAdvertise = ({product}) => {
-    const [booking, setBooking] = useState([]);
- console.log(booking);
- 
+  return (
+    <div>
+      <a href="/" class="group block overflow-hidden">
+        <img
+          alt="Tee"
+          src={product.img}
+          class="h-[300px] w-full object-cover transition-transform duration-700 group-hover:scale-105 sm:h-[450px]"
+        />
 
-
-    return (
-        <div>
-            <div className="overflow-hidden rounded-lg shadow transition hover:shadow-lg max-w-xs dark:bg-gray-50 dark:text-gray-100">
-               <img src={product?.img} alt="" className="object-cover object-center w-full rounded-t-md h-72 dark:bg-gray-500" />
-                <div className="flex flex-col justify-between p-6 space-y-8">
-                  <div className="space-y-2">
-                     <h2 className="text-3xl font-semibold text-slate-600 tracking-wide">{product?.name}</h2>
-                     <p className="dark:text-gray-600">{product?.seller_price}</p>
-                     <p className="dark:text-gray-600">{product?.old_price}</p>
-                     <p className="dark:text-gray-600">{product?.ratings}</p>
-                     <p className="dark:text-gray-600">{product?.status}</p>
-                     {/* <button type="button" className="btn btn-ghost btn-xs  dark:text-gray-500">Advertise</button>    */}       
-                   </div> 
-                   <label   
-                     htmlFor="booking-modal" className="hover:text-primary mb-3  text-slate-700">
-                     text
-                 </label>
-                </div>  
-                <BookingModal 
-               booking={booking}
-              ></BookingModal>
-            </div>
+        <div class="relative bg-white gap-3 pt-4 flex ">
+          <div>
+            <h3 class=" text-gray-700 group-hover:underline group-hover:underline-offset-4">
+              Name: {product.name}
+            </h3>
+            <p class="">
+              <span class="tracking-wider">
+                Old Price: £{product.old_price}{" "}
+              </span>
+            </p>
+            <p>Regular Price: £{product.seller_price} </p>
+          </div>
+          <div className="text-start">
+            <p className="dark:text-gray-600 ">Status: {product?.status}</p>
+            <p className="dark:text-gray-600">Ratings: {product?.ratings}</p>
+            <span class="sr-only">g</span>
+            <label
+              htmlFor="booking-modal"
+              className="hover:text-pink-600 tracking-wider btn-xs btn btn-ghost mb-3 uppercase text-slate-700"
+            >
+              Advertise
+            </label>
+          </div>
         </div>
-    );
+      </a>
+      <BookingModal booking={booking} setBooking={setBooking}></BookingModal>
+    </div>
+  );
 };
 
 export default ShowAdvertise;
