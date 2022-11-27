@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import AllCategory from '../AllCategory/AllCategory';
-import axios from 'axios';
 import { useQuery } from '@tanstack/react-query';
 
+
 const AllCategories = () => {
-    const {data: categories = [], refetch, isLoading} = useQuery({
+    const {data: categories = []} = useQuery({
     queryKey: ['categories'],
     queryFn: async()=> {
         const res = await fetch('http://localhost:5000/threeCollection');

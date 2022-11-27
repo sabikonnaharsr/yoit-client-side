@@ -15,6 +15,7 @@ import ProtectedRoutes from "../ProtectedRoutes/ProtectedRoutes";
 import MyOrders from  "../../Pages/MyOrderSection/MyOrders/MyOrders"
 import AddProduct from "../../Pages/DashboardSection/AddProduct/AddProduct";
 import Payment from "../../Pages/DashboardSection/Payment/Payment";
+import MyProducts from "../../Pages/ProductSection/MyProducts/MyProducts";
 // import AddProduct from "../../Pages/DashboardSection/AddProduct/AddProduct";
 
 
@@ -87,10 +88,14 @@ export const router = createBrowserRouter([
         path: "/dashboard",
         element: <Wishlist></Wishlist>,
       },
-      // {
-      //   path: "/dashboard/addProduct",
-      //   element: <AddProduct></AddProduct>
-      // },
+      {
+        path: "/dashboard/addProduct",
+        element: <AddProduct></AddProduct>
+      },
+      {
+        path: "/dashboard/myproduct",
+        element: <MyProducts></MyProducts>
+      }
     ],
   },
 

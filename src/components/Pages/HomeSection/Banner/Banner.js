@@ -11,7 +11,7 @@ const Banner = () => {
               <div className="relative h-64 sm:h-80 lg:h-full">
                 <img
                   alt="House"
-                  src="https://images.unsplash.com/photo-1486401049719-c73f3d070305?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+                  src="https://img.freepik.com/free-photo/blissful-lady-trendy-summer-clothes-posing-with-camera-yellow-positive-beautiful-girl-hat-chilling-studio_197531-11082.jpg?w=996&t=st=1669549171~exp=1669549771~hmac=759be5796675551b526ea95ec4d751782a2f8a68c0a50803ad4555e03d9a6b05"
                   className="absolute inset-0 h-full w-full object-cover"
                 />
               </div>
@@ -20,12 +20,12 @@ const Banner = () => {
             <div className="relative flex items-center bg-gray-100">
               <span className="hidden lg:absolute lg:inset-y-0 lg:-left-16 lg:block lg:w-16 lg:bg-gray-100"></span>
               <div className="p-8 sm:p-16 lg:p-24">
-                <h2 className="text-2xl font-bold text-pink-500 sm:text-3xl">
+                <h2 className="text-2xl font-bold text-[#FE731B] sm:text-3xl">
                   Some human cultures, traditionally make their clothing
                   entirely of prepared.
                 </h2>
                 <p className="mt-4 text-gray-600">
-                  <span className="text-7xl font-bold text-pink-700">
+                  <span className="text-7xl font-bold text-[#FE731B]">
                     Clothing
                   </span>
                   also known as clothes, apparel, and attire are items worn on
@@ -40,7 +40,7 @@ const Banner = () => {
                 </p>
                 <a
                   href="/"
-                  className="mt-8 inline-block rounded border border-white-600 bg-pink-600 px-12 py-3 text-sm font-medium text-white hover:bg-transparent hover:text-pink-600 focus:outline-none focus:ring active:text-indigo-500"
+                  className="mt-8 inline-block rounded border border-white-600 bg-[#FE731B] px-12 py-3 text-sm font-medium text-white hover:bg-transparent hover:text-pink-600 focus:outline-none focus:ring active:text-indigo-500"
                 >
                   Get in Touch
                 </a>

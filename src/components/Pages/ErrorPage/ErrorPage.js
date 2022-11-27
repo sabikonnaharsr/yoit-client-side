@@ -1,7 +1,10 @@
 import React from "react";
 import { FaArrowRight, FaBeer } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useRouteError } from "react-router-dom";
+
+
 const ErrorPage = () => {
+  const error = useRouteError();
   return (
     <div>
       <div className="grid h-screen place-content-center bg-white">
@@ -27,7 +30,7 @@ const ErrorPage = () => {
           <h1 className="mt-6 text-2xl font-bold tracking-tight text-gray-900 sm:text-4xl">
             Uh-oh!
           </h1>
-          <p className="mt-4 text-gray-500">We can't find that page.</p>
+          <p className="mt-4 text-gray-500">{error?.statusText || error?.message}</p>
           <div className="flex justify-center items-center gap-2 text-xxl text-pink-700 font-bold">
             <div className="text-2xl">
               <FaArrowRight />

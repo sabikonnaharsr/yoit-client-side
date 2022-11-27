@@ -27,7 +27,7 @@ const DashboardLayout = () => {
               <Link>Add Product</Link>
             </li>
             <li className="bg-slate-200 text-sm font-bold uppercase">
-              <Link>My Orders</Link>
+              <Link to='/dashboard/myproduct'>My Products</Link>
             </li>
             <li className="bg-slate-200 text-sm font-bold uppercase">
               <Link>Wishlist</Link>

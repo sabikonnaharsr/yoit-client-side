@@ -9,7 +9,7 @@ import toast from "react-hot-toast";
 const CategoryItemDetailsPage = () => {
   const { user } = useContext(AuthContext)
   const [booking, setBooking] = useState([]);
- console.log(booking);
+//  console.log(booking);
    const detailsProduct = useLoaderData();
 
    const {name, img, description, seller_price, old_price, ratings, location, _id} = detailsProduct;

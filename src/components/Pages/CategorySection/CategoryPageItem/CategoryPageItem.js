@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaArrowAltCircleRight, FaArrowRight } from 'react-icons/fa';
+import {  FaArrowRight } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 const CategoryPageItem = ({product}) => {
