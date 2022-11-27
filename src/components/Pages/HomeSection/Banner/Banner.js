@@ -11,7 +11,7 @@ const Banner = () => {
               <div className="relative h-64 sm:h-80 lg:h-full">
                 <img
                   alt="House"
-                  src="https://img.freepik.com/free-photo/blissful-lady-trendy-summer-clothes-posing-with-camera-yellow-positive-beautiful-girl-hat-chilling-studio_197531-11082.jpg?w=996&t=st=1669549171~exp=1669549771~hmac=759be5796675551b526ea95ec4d751782a2f8a68c0a50803ad4555e03d9a6b05"
+                  src="https://img.freepik.com/free-photo/attractive-happy-smiling-stylish-woman-shopaholic-red-trendy-dress-jumping-running-holding-colorful-shopping-bags-pink-wall-isolated-sale-excited-spring-summer-fashion-trend_285396-7340.jpg?size=626&ext=jpg&ga=GA1.2.1510053171.1664396538"
                   className="absolute inset-0 h-full w-full object-cover"
                 />
               </div>
@@ -20,13 +20,13 @@ const Banner = () => {
             <div className="relative flex items-center bg-gray-100">
               <span className="hidden lg:absolute lg:inset-y-0 lg:-left-16 lg:block lg:w-16 lg:bg-gray-100"></span>
               <div className="p-8 sm:p-16 lg:p-24">
-                <h2 className="text-2xl font-bold text-[#FE731B] sm:text-3xl">
-                  Some human cultures, traditionally make their clothing
+                <h2 className="text-xs font-bold uppercase text-slate-500 sm:text-3xl">
+                 traditionally make their clothing
                   entirely of prepared.
                 </h2>
                 <p className="mt-4 text-gray-600">
-                  <span className="text-7xl font-bold text-[#FE731B]">
-                    Clothing
+                  <span className="text-7xl font-bold text-slate-600 ">
+                    <span className="text-pink-700">C</span><span className="text-slate-600">l</span><span className="text-[#05CDE9]">o</span><span className="text-[#DF0226]">t</span><span className="text-[#FF9702]">h</span><span className="text-pink-600">i</span><span className="text-slate-600">n</span><span className=" text-[#F58C9B]">g</span>
                   </span>
                   also known as clothes, apparel, and attire are items worn on
                   the body. Typically, clothing is made of fabrics or textiles,
@@ -38,9 +38,10 @@ const Banner = () => {
                   on gender, body type, social factors, and geographic
                   considerations. Garments cover the body,
                 </p>
+               
                 <a
                   href="/"
-                  className="mt-8 inline-block rounded border border-white-600 bg-[#FE731B] px-12 py-3 text-sm font-medium text-white hover:bg-transparent hover:text-pink-600 focus:outline-none focus:ring active:text-indigo-500"
+                  className="mt-8 inline-block rounded border border-white-600 bg-pink-600 px-12 py-3 text-sm font-medium text-white hover:bg-transparent hover:text-pink-600 focus:outline-none focus:ring active:text-indigo-500"
                 >
                   Get in Touch
                 </a>
