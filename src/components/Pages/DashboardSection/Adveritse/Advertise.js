@@ -22,7 +22,7 @@ const Advertise = () => {
     isLoading,
   } = useQuery({
     queryKey: ["advertiseData"],
-    // http://localhost:5000/advertise-products
+   
     queryFn: async () => {
       const res = await fetch('http://localhost:5000/advertise-products');
       const data = await res.json();
@@ -36,8 +36,10 @@ const Advertise = () => {
 
   return (
     <div className="container mx-auto bg-white text-black px-4 pt-12">
-      {advertiseData.length > 0 && (
+      {advertiseData.length < 1 && (
         <div className="font-Babes text-4xl tracking-wide border-l-4 border-red-400 mt-0 lg:mt-10">
+          <p className="text-2xl font-bold text-gray-600">I have no any my product</p>
+          <p  className="text-2xl font-bold text-gray-600">Please go to add product</p>
           {/* <h1 className="px-3 text-[21px]">Popular Item in </h1>
           <h1 className="px-3">
             the market{" "}

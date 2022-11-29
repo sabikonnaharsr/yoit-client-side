@@ -1,11 +1,10 @@
-import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
-import React, { useContext, useEffect, useState } from 'react';
-import { AuthContext } from '../../../../Contexts/AuthProvider';
+import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
+import React, { useContext, useEffect, useState } from "react";
+import { AuthContext } from "../../../../Contexts/AuthProvider";
 
-const PaymentForm = ({product}) => {
-   
-    const { user } = useContext(AuthContext);
-const [processing,setProcessing]= useState(false)
+const PaymentForm = ({ product }) => {
+  const { user } = useContext(AuthContext);
+  const [processing, setProcessing] = useState(false);
   const [cardError, setCardError] = useState("");
   const [transactionId, setTransactionId] = useState("");
   const [success, setSuccess] = useState("");
@@ -13,11 +12,8 @@ const [processing,setProcessing]= useState(false)
   const stripe = useStripe();
   const elements = useElements();
 
-  const {seller_price, name , _id } = product;
-  
-  
-
-
+  const { seller_price, name, _id, productId } = product;
+  console.log(product)
 
   useEffect(() => {
     // Create PaymentIntent as soon as the page loads
@@ -31,7 +27,7 @@ const [processing,setProcessing]= useState(false)
   }, [seller_price]);
 
   const handleSubmit = async (e) => {
-    console.log('fgjkdfgl')
+    console.log("fgjkdfgl");
     e.preventDefault();
 
     if (!stripe || !elements) {
@@ -71,10 +67,9 @@ const [processing,setProcessing]= useState(false)
       const payment = {
         name,
         seller_price,
-        product_id: _id,
+        productId,
         email: user.email,
         transactionId: paymentIntent.id,
-        
       };
       // post information in  database
       fetch("http://localhost:5000/payments", {
@@ -82,13 +77,11 @@ const [processing,setProcessing]= useState(false)
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(payment)
+        body: JSON.stringify(payment),
       })
         .then((res) => res.json())
         .then((data) => {
           if (data.insertedId) {
-           
-            
             setSuccess("Payment success!");
             setTransactionId(paymentIntent.id);
           }
@@ -98,7 +91,7 @@ const [processing,setProcessing]= useState(false)
   };
 
   return (
-    <div className="shadow mx-auto d-flex items-center justify-center">
+    <div className="">
       <form onSubmit={handleSubmit}>
         <CardElement
           options={{
@@ -120,7 +113,7 @@ const [processing,setProcessing]= useState(false)
         <div className="text-center">
           <button
             type="submit"
-            disabled={!clientSecret || !stripe  || processing}
+            disabled={!clientSecret || !stripe || processing}
             className="bg-primary my-6 font-bold text-[#fff] text-center"
           >
             pay

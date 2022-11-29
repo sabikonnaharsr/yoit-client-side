@@ -6,16 +6,18 @@ import ProductGallery from "../../../Pages/HomeSection/DressGallery/ProductGalle
 import AllCategories from "../../CategorySection/AllCategories/AllCategories";
 import MyProducts from "../../ProductSection/MyProducts/MyProducts";
 import Advertise from "../../DashboardSection/Adveritse/Advertise";
+import UseTitle from "../../../Hooks/UseTitle";
 
 
 
 
 const Home = () => {
+  UseTitle('Home')
   return (
     <div>
       <Banner></Banner>
       <Advertise></Advertise>
-      <MyProducts></MyProducts>  
+      {/* <MyProducts></MyProducts>   */}
       <DressGallery></DressGallery>
       <ProductGallery></ProductGallery>
       <AllCategories></AllCategories>

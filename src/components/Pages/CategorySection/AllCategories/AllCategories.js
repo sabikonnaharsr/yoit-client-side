@@ -1,9 +1,11 @@
 import React from 'react';
 import AllCategory from '../AllCategory/AllCategory';
 import { useQuery } from '@tanstack/react-query';
+import UseTitle from '../../../Hooks/UseTitle';
 
 
 const AllCategories = () => {
+    UseTitle('All Categories')
     const {data: categories = []} = useQuery({
     queryKey: ['categories'],
     queryFn: async()=> {

@@ -1,16 +1,39 @@
 import React from 'react';
+import toast from 'react-hot-toast';
+import UseTitle from '../../../Hooks/UseTitle';
 
-const MyProduct = ({myProduct}) => {
-     
-    const handleAdvertise = (id) =>{
-        console.log(id)
 
+
+const MyProduct = ({myProduct, refetch}) => {  
+    UseTitle('My Product');
+    
+    const handleAdvertiseMyProduct = (id, myProduct) =>{
+        fetch(`http://localhost:5000/myProductAdvertise/${id}`)
+        .then(res => res.json())
+        .then(data => {console.log(data)
+            if(data.modifiedCount > 0){
+                toast.success(`${myProduct?.name} advertise is done`)
+                refetch();
+            }
+        
+        
+        })
+    }
+    const handleDeleteMyProduct = (id) => {
+        fetch(`http://localhost:5000/reportedProduct/${id}`, {
+            method: 'DELETE'
+        })
+        .then(res => res.json())
+        .then(data => {console.log(data)
+          if(data.deletedCount > 0){
+             toast.success('My product is deleted successfully')
+             refetch()
+          }
+        
+        })
     }
 
-   
-
-
-
+ 
     return (
         <div>
             <div className="max-w-xs rounded-md shadow-md dark:bg-gray-50 dark:text-gray-100">
@@ -22,10 +45,11 @@ const MyProduct = ({myProduct}) => {
                       <p className="dark:text-gray-600">Old Price: ${myProduct?.old_price}</p>
                       <p className="dark:text-gray-600">Ratings: {myProduct?.ratings}</p>
                       <div className='flex gap-3 justify-between'>
-                      <button onClick={() => handleAdvertise(myProduct._id)} type="button" className="btn btn-ghost btn-xs  dark:text-gray-500 hover:text-sky-500 hover:font-bold ">Advertise</button>   
-                     
+
+                      <button onClick={() => handleAdvertiseMyProduct(myProduct._id)} type="button" className="btn btn-ghost btn-xs  dark:text-gray-500 hover:text-sky-500 hover:font-bold ">{myProduct?.advertiseShow?"advertised": "advertise"}</button>     
+                      <button onClick={() => handleDeleteMyProduct(myProduct._id)} type="button" className="btn btn-ghost btn-xs dark:text-gray-500 hover:text-sky-500 hover:font-bold ">Delete</button>     
                     </div>   
-                    </div>    
+                  </div>    
                 </div>  
             </div>
         </div>

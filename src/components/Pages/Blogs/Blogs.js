@@ -1,12 +1,14 @@
 import React from "react";
+import UseTitle from "../../Hooks/UseTitle";
 
 const Blogs = () => {
+  UseTitle('Blogs');
   return (
     <div className="mb-10">
-      <h1 className="text-5xl uppercase text-center mt-10 text-slate-600 mb-3">
+      <h1 className="text-5xl uppercase text-center hover:text-slate-500 font-bold mt-10 text-[#05CDE9] mb-3">
         The Community Of Blogs
       </h1>
-      <p className="text-center uppercase hover:text-slate-900">
+      <p className="text-center uppercase hover:text-[#05CDE9]">
         Build and drive by the community. On a mission to make every React
         developer's life easier when it comes to building forms.
       </p>
@@ -18,7 +20,7 @@ const Blogs = () => {
       </div>
       <div className="grid gird-cols-1 md:gird-cols-3 text-start lg:grid-cols-3 gap-4">
         <div>
-          <h3 className="text-xl hover:text-slate-900 uppercase font-bold">
+          <h3 className="text-xl hover:text-slate-900 uppercase text-slate-600 font-bold">
             What are the different ways to manage a state in a React
             application?
           </h3>
@@ -36,7 +38,7 @@ const Blogs = () => {
           </p>
         </div>
         <div>
-          <h3 className="text-xl hover:text-slate-900 uppercase font-bold">
+          <h3 className="text-xl hover:text-slate-900 text-slate-600 uppercase font-bold">
             How does prototypical inheritance work?
           </h3>
           <p  className="hover:text-slate-900">
@@ -51,7 +53,7 @@ const Blogs = () => {
           </p>
         </div>
         <div>
-          <h3 className="text-xl hover:text-slate-900 uppercase font-bold">
+          <h3 className="text-xl hover:text-slate-900 text-slate-600 uppercase font-bold">
             What is a unit test? Why should we write unit tests?
           </h3>
           <p  className="hover:text-slate-900">
@@ -67,7 +69,7 @@ const Blogs = () => {
           </p>
         </div>
         <div>
-          <h3 className="text-xl hover:text-slate-900 font-bold uppercase justify-center">React vs. Angular vs. Vue?</h3>
+          <h3 className="text-xl hover:text-slate-900 text-slate-600 font-bold uppercase justify-center">React vs. Angular vs. Vue?</h3>
           <p  className="hover:text-slate-900">
             Vue provides higher customizability and hence is easier to learn
             than Angular or React. Further, Vue has an overlap with Angular and

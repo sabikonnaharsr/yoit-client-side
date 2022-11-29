@@ -34,7 +34,7 @@ const SignUp = () => {
       // form.reset();
       updateUser(userInfo)
       .then(() => {
-        saveUser(data.name, data.email, data.accountType)
+        saveUser(data.name, data.email, data.accountType, data.photoURL)
       })
       .catch(err=> console.log(err))
     })
@@ -42,6 +42,10 @@ const SignUp = () => {
       console.log(error)
       setSignupError(error.message)
     });
+
+
+
+
   }
    
    // google signIn
@@ -74,8 +78,8 @@ const SignUp = () => {
 
 
   // user data save
-  const saveUser = (name, email, accountType) => {
-    const user = {name, email, accountType};
+  const saveUser = (name, email, accountType, photoURL) => {
+    const user = {name, email, accountType, photoURL};
     fetch('http://localhost:5000/users', {
       method: 'POST',
       headers: {
@@ -97,20 +101,12 @@ const SignUp = () => {
        {/* form start */}
         <form onSubmit={handleSubmit(handleSignup)} className="shadow-2xl lg:px-24 py-16">
         <h1 className="text-4xl text-center font-bold text-slate-600">Signup</h1>
-          {/* name */}
           <div className="form-control flex text-slate-700 justify-between w-full max-w-xs">
           {/* firstName */}
             <label className="label w-100">
               <span className="label-text text-slate-600">First Name</span>
             </label>
-            <input type="firstName" {...register("firstName")} 
-            className='input input-bordered input-primary w-full max-w-xs'/>
-
-          {/* lastName */}
-            <label className="label">
-              <span className="label-text text-slate-600">Last Name</span>
-            </label>
-            <input type="lastName" {...register("lastName")} 
+            <input name="name" type="text" {...register("name")} 
             className='input input-bordered input-primary w-full max-w-xs'/>
           </div>
 
@@ -118,7 +114,7 @@ const SignUp = () => {
           
           <label for="countries" class="block mb-2 text-sm font-medium text-gray-50 dark:text-white">Select an option</label>
           <select {...register("accountType")} id="countries" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-            <option value="buyer"  selected>Buyer</option>
+            <option value="buyer">Buyer</option>
             <option value="seller">Seller</option>
           </select>
 

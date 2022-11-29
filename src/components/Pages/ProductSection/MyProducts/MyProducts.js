@@ -9,7 +9,7 @@ const MyProducts = () => {
     const {user} = useContext(AuthContext)
     console.log(user)
 
-    const {data: myProducts = []} = useQuery({
+    const {data: myProducts = [], refetch} = useQuery({
         queryKey: ['myProducts', user?.email],
         queryFn: async()=> {
             const res = await fetch(`http://localhost:5000/myproducts?email=${user?.email}`);   
@@ -26,11 +26,10 @@ const MyProducts = () => {
                myProducts.map(myProduct => <MyProduct
                key={myProduct._id}
                myProduct={myProduct}
+               refetch={refetch}
                ></MyProduct>)
             }
-            {
-                myProducts.length
-            }
+           
            </div>
         </div>
     );

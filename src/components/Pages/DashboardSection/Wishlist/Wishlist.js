@@ -1,10 +1,12 @@
 import { useQuery } from "@tanstack/react-query";
 import React, { useContext } from "react";
 import { AuthContext } from "../../../Contexts/AuthProvider";
+import UseTitle from "../../../Hooks/UseTitle";
+
 
 const Wishlist = () => {
+  UseTitle('Wishlist');
   const { user } = useContext(AuthContext);
-
   const url = `http://localhost:5000/get-wishlist`;
   const { data: bookings = [] } = useQuery({
     queryKey: ["bookings", user?.email],
@@ -13,7 +15,10 @@ const Wishlist = () => {
       const data = await res.json();
       return data;
     },
+
   });
+
+
   return (
     <div>
       <h2 className="text-slate-500 text-3xl mt-10 text-center mb-3 font-bold uppercase">

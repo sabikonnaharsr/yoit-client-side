@@ -5,8 +5,9 @@ import { router } from './components/Routes/Router/Router';
 
 
 function App() {
+  // className='max-w-[1440px] mx-auto'
   return (
-    <div className='max-w-[1440px] mx-auto'>
+    <div>
        <RouterProvider router={router}></RouterProvider>
        <Toaster></Toaster>
     </div>

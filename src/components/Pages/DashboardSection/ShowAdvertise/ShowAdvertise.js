@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import BookingModal from "../../CategorySection/BookingModal/BookingModal";
 
 const ShowAdvertise = ({ product }) => {
+
   const [booking, setBooking] = useState([]);
   console.log(booking);
 

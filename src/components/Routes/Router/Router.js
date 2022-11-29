@@ -12,10 +12,16 @@ import Wishlist from "../../Pages/DashboardSection/Wishlist/Wishlist";
 import ErrorPage from "../../Pages/ErrorPage/ErrorPage";
 import Home from "../../Pages/HomeSection/Home/Home";
 import ProtectedRoutes from "../ProtectedRoutes/ProtectedRoutes";
-import MyOrders from  "../../Pages/MyOrderSection/MyOrders/MyOrders"
+
 import AddProduct from "../../Pages/DashboardSection/AddProduct/AddProduct";
 import Payment from "../../Pages/DashboardSection/Payment/Payment";
 import MyProducts from "../../Pages/ProductSection/MyProducts/MyProducts";
+import AllSeller from "../../Pages/AdminSection/AllSeller/AllSeller";
+import AllBuyer from "../../Pages/AdminSection/AllBuyer/AllBuyer";
+import AllUser from "../../Pages/AdminSection/AllUser/AllUser";
+import ReportedItem from "../../Pages/AdminSection/ReportedItem/ReportedItem";
+import MyProduct from "../../Pages/ProductSection/MyProduct/MyProduct";
+import MyOrders from "../../Pages/DashboardSection/MyOrders/MyOrders";
 // import AdvertisedItem from "../../Pages/DashboardSection/AdveritsedItem/AdvertisedItem";
 // import AddProduct from "../../Pages/DashboardSection/AddProduct/AddProduct";
 
@@ -95,8 +101,26 @@ export const router = createBrowserRouter([
       },
       
       {
-       
+        path: '/dashboard/allSeller',
+        element: <AllSeller></AllSeller>
+      },
+      {
+        path: "/dashboard/allBuyer",
+        element: <AllBuyer></AllBuyer>
+      },
+      {
+        path: "/dashboard/allUsers",
+        element: <AllUser></AllUser>
+      },
+      {
+        path: '/dashboard/reportedProduct',
+        element: <ReportedItem></ReportedItem>
+      },
+      {
+        path: '/dashboard/myOrder',
+        element: <MyOrders></MyOrders>
       }
+      
     ],
   },
 

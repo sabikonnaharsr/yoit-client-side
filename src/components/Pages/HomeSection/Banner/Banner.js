@@ -20,13 +20,13 @@ const Banner = () => {
             <div className="relative flex items-center bg-gray-100">
               <span className="hidden lg:absolute lg:inset-y-0 lg:-left-16 lg:block lg:w-16 lg:bg-gray-100"></span>
               <div className="p-8 sm:p-16 lg:p-24">
-                <h2 className="text-xs font-bold uppercase text-slate-500 sm:text-3xl">
+                <h2 className="text-xs font-bold hover:text-[#05CDE9] uppercase text-slate-500 sm:text-3xl">
                  traditionally make their clothing
                   entirely of prepared.
                 </h2>
                 <p className="mt-4 text-gray-600">
                   <span className="text-7xl font-bold text-slate-600 ">
-                    <span className="text-pink-700">C</span><span className="text-slate-600">l</span><span className="text-[#05CDE9]">o</span><span className="text-[#DF0226]">t</span><span className="text-[#FF9702]">h</span><span className="text-pink-600">i</span><span className="text-slate-600">n</span><span className=" text-[#F58C9B]">g</span>
+                    <span className="text-pink-700 hover:text-[#05CDE9]">C</span><span className="text-slate-600 hover:text-[#05CDE9]">l</span><span className="text-[#05CDE9]">o</span><span className="text-[#DF0226] hover:text-[#05CDE9]">t</span><span className="text-[#FF9702] hover:text-[#05CDE9]">h</span><span className="text-pink-600 hover:text-[#05CDE9]">i</span><span className="text-slate-600 hover:text-[#05CDE9]">n</span><span className=" text-[#F58C9B] hover:text-[#05CDE9]">g</span>
                   </span>
                   also known as clothes, apparel, and attire are items worn on
                   the body. Typically, clothing is made of fabrics or textiles,

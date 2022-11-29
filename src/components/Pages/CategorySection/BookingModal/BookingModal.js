@@ -1,3 +1,4 @@
+import { format } from "date-fns";
 import React, { useContext } from "react";
 import toast from "react-hot-toast";
 import {AuthContext} from "../../../Contexts/AuthProvider"
@@ -6,7 +7,9 @@ import {AuthContext} from "../../../Contexts/AuthProvider"
 const BookingModal = ({ booking }) => {
    const {user} = useContext(AuthContext)
   const {name,seller_price} = booking;
- 
+  const date = new Date()
+  const today = format(date, "PP")
+  
 
   const handleBooking= (e) =>{
     e.preventDefault();
@@ -15,15 +18,18 @@ const BookingModal = ({ booking }) => {
     // const price = form.price.value;
     const userName = form.name.value;
     const email = form.email.value;
-  
-    const booking = {
-      itemName: name,
-      user: userName,
+    
+    const bookingData = {
+      ...booking,
+      productId: booking._id,
+      buyerName: userName,
       seller_price,
       email,
-      phone,
-
+      buyerPhone: phone,
+      bookingDate: today
     }
+
+    delete bookingData._id;
     console.log(booking)
     // toast.success('Booking Confirmed')
 
@@ -33,7 +39,7 @@ const BookingModal = ({ booking }) => {
       headers: {
         'content-type': 'application/json'
       },
-      body: JSON.stringify(booking)
+      body: JSON.stringify(bookingData)
     })
     .then(res=> res.json())
     .then(data => {
@@ -66,7 +72,7 @@ const BookingModal = ({ booking }) => {
               <select name="slot" className="select select-bordered w-full bg-slate-200">       
               </select>
 
-              <input type="text" placeholder="Your Name"name="name" defaultValue={user?.displayName}  className="input w-full input-bordered input-secondary " />
+              <input type="text" placeholder="Your Name" name="name" defaultValue={user?.displayName}  className="input w-full input-bordered input-secondary " />
               <input type="text" placeholder="Phone Number" name="phone" className="input w-full input-bordered input-secondary" required/>
 
               <input type="text" placeholder="Email Address" defaultValue={user?.email} readOnly name="email"className="input w-full input-bordered bg-slate-200 " required/>

@@ -5,6 +5,7 @@ import toast from "react-hot-toast";
 import { useForm } from 'react-hook-form';
 import { AuthContext } from '../../../Contexts/AuthProvider';
 import { format } from 'date-fns';
+import { Link } from 'react-router-dom';
 
 const AddProduct = () => {
     const {user} = useContext(AuthContext);
@@ -42,11 +43,15 @@ const AddProduct = () => {
                 old_price: oldPrice,
                 product_id: category ,
                 opinion,
+                email: user?.email, 
                 description: message,
                 location: location,
                 sellerName ,
                 ratings: 5,
-                postTime: today
+                postTime: today, 
+                paid: false,
+                status: "available",
+                advertiseShow: false
     
             }
             fetch('http://localhost:5000/addProduct', {
@@ -62,14 +67,12 @@ const AddProduct = () => {
                 if(data.acknowledged){ 
       
                     toast.success('you successfully added your product')
-                     
-                    .catch((er) => console.error(er.message));
                     }
                    
             })
         }
-        console.log(imgData)
     })
+    .catch((er) => console.error(er.message));
 
 
    }
@@ -77,7 +80,7 @@ const AddProduct = () => {
 
   return (
 <div>
-<section className="bg-slate-800">
+<section className="bg-slate-50">
   <div className="lg:grid lg:min-h-screen lg:grid-cols-12">
     <aside
       className="relative block h-16 lg:order-last lg:col-span-5 lg:h-full xl:col-span-6"
@@ -97,22 +100,22 @@ const AddProduct = () => {
           <span className="sr-only">Home</span>
               <img src="" alt="" />
         </a>
-
+{/* 
         <h1
-          className="mt-6 text-2xl font-bold text-gray-50 sm:text-3xl md:text-4xl"
+          className="mt-6 text-2xl font-bold text-gray-500 sm:text-3xl md:text-4xl"
         >
           Welcome to add your products 
-        </h1>
+        </h1> */}
 
-        <p className="mt-4 leading-relaxed text-gray-50">
+        <p className="mt-4 leading-relaxed text-gray-500">
            Thank your being with us and also we are here to give you the best price.
         </p>
 
         <form onSubmit={handleSubmit(addProducts)} action="/" className="mt-8 grid grid-cols-6 gap-6">
-          <div className="col-span-6 sm:col-span-3">
+          <div className="col-span-6 sm:col-span-3 select-bordered w-full max-w-xs">
             <label
               for="FirstName"
-              className="block text-sm font-medium text-gray-50"
+              className="block text-sm font-medium text-gray-500"
             >
               Name
             </label>
@@ -121,7 +124,7 @@ const AddProduct = () => {
               id=""
               name="text"
               {...register('name')}
-              className="mt-1 w-full border-gray-900 bg-gray-700 text-white shadow-sm"
+              className="mt-1 w-full border-gray-900 text-slate-500 shadow-sm"
             />
           </div>
 
@@ -129,7 +132,7 @@ const AddProduct = () => {
             <label
               name= "price"
               for="price"
-              class="block text-sm font-medium text-gray-50"   
+              class="block text-sm font-medium text-gray-500"   
             >
               Price
             </label>
@@ -137,7 +140,7 @@ const AddProduct = () => {
               type="text"
               id="price"
               name="sellerPrice"
-              class="mt-1 w-full border-gray-900 bg-gray-700 text-gray-50 shadow-sm"
+              class="mt-1 w-full border-gray-900 text-gray-500 shadow-sm"
               {...register('sellerPrice')}
             />
           </div>
@@ -146,7 +149,7 @@ const AddProduct = () => {
             <label
               name= "oldPrice"
               for="price"
-              class="block text-sm font-medium text-gray-50"  
+              class="block text-sm font-medium text-gray-500"  
             >
              Old Price
             </label>
@@ -154,27 +157,27 @@ const AddProduct = () => {
               type="text"
               id="price"
               name="price"
-              class="mt-1 w-full border-gray-900 bg-gray-700 text-gray-50 shadow-sm"
+              class="mt-1 w-full border-gray-900  text-gray-500 shadow-sm"
               {...register('oldPrice')}
             />
           </div>
 
           <div className="col-span-6 sm:col-span-3">
-            <label for="Email" className="block text-sm font-medium text-gray-50">
+            <label for="Email" className="block text-sm font-medium text-gray-500">
               Phone Number
             </label>
             <input
               type="Phone Number"
               id=""
               name="phoneNumber"
-              className="mt-1 w-full border-gray-900 bg-gray-700 text-white shadow-sm"
+              className="mt-1 w-full border-gray-900  text-slate-500 shadow-sm"
               {...register('phoneNumber')} 
             />
           </div>
           
 
           <div className="col-span-6 sm:col-span-3">
-            <label for="Email" className="block text-sm font-medium text-gray-50">
+            <label for="Email" className="block text-sm font-medium text-gray-500">
               put your opinion
             </label>
                 <select {...register('opinion')}  className="select  select-bordered w-full max-w-xs">
@@ -186,33 +189,33 @@ const AddProduct = () => {
            </div>
 
           <div className="col-span-6 sm:col-span-3">
-            <label for="Email" className="block text-sm font-medium text-gray-50">
+            <label for="Email" className="block text-sm font-medium text-gray-500">
               location
             </label>
             <input
               type="text"
               id=""
               name="location"
-              className="mt-1 w-full border-gray-900 bg-gray-700 text-white shadow-sm"
+              className="mt-1 w-full border-gray-900  text-slate-500 shadow-sm"
               {...register('location')} 
             />
           </div>
 
           <div className="col-span-6 sm:col-span-3">
-            <label for="Email" className="block text-sm font-medium text-gray-50">
+            <label for="Email" className="block text-sm font-medium text-gray-500">
               Years of use
             </label>
             <input
               type="text"
               id=""
               name="years"
-              className="mt-1 w-full border-gray-900 bg-gray-700 text-white shadow-sm"
+              className="mt-1 w-full border-gray-900 text-slate-500 shadow-sm"
               {...register('years')} 
             />
           </div>
 
           <div className="col-span-6 sm:col-span-3">
-            <label for="Email" className="block text-sm font-medium text-gray-50">
+            <label for="Email" className="block text-sm font-medium text-gray-500">
               Category
             </label>
                 <select {...register('category')} className="select select-bordered w-full max-w-xs">
@@ -220,13 +223,13 @@ const AddProduct = () => {
                 <option value='1'>Women Collection</option>
                 <option value='2'>Men Collection</option>
                 <option value='3'>Baby Collection</option>
-           </select>
+                </select>
           </div>
 
           <div className="col-span-6 sm:col-span-3">
             <label
               for="email"
-              className="block text-sm font-medium text-gray-50"
+              className="block text-sm font-medium text-gray-500"
             >
               Email
             </label>
@@ -236,14 +239,14 @@ const AddProduct = () => {
               name="email"
               disabled
               defaultValue={user?.email}
-              className="mt-1 w-full border-gray-900 bg-gray-700 text-gray-50 shadow-sm"
+              className="mt-1 w-full border-gray-900  text-gray-500 shadow-sm"
             />
           </div>
 
           <div className="col-span-6 sm:col-span-3">
             <label
               for="PasswordConfirmation"
-              className="block text-sm font-medium text-gray-50"
+              className="block text-sm font-medium text-gray-500"
             >
              Picture
             </label>
@@ -252,7 +255,7 @@ const AddProduct = () => {
           
 
           <div className="col-span-6 sm:col-span-3">
-            <label for="Email" className="block text-sm font-medium text-gray-50">
+            <label for="Email" className="block text-sm font-medium text-gray-500">
               Seller Name
             </label>
             <input
@@ -261,13 +264,13 @@ const AddProduct = () => {
               
               defaultValue={user?.displayName}
               name="sellerName"
-              className="mt-1 w-full border-gray-900 bg-gray-700 text-white shadow-sm"
+              className="mt-1 w-full border-gray-900 text-slate-600 shadow-sm"
               {...register('sellerName')} 
             />
           </div>
 
           <div className="col-span-6 w-full">
-            <label for="Email"  className="block  text-sm font-medium text-gray-50">
+            <label for="Email"  className="block  text-sm font-medium text-gray-500">
               Message
             </label>
             <textarea  {...register('message')}  className="textarea w-full textarea-bordered" placeholder="type your message">  
@@ -302,13 +305,13 @@ const AddProduct = () => {
 
           <div className="col-span-6 sm:flex sm:items-center sm:gap-4">
             <button
-              className="inline-block shrink-0 rounded-md border border-blue-600 bg-blue-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-transparent hover:text-blue-600 focus:outline-none focus:ring active:text-blue-500"
+              className="inline-block shrink-0 rounded-md border border-blue-600 bg-blue-600 px-12 py-3 text-sm font-medium text-slate-50 transition hover:bg-transparent hover:text-blue-600 focus:outline-none focus:ring active:text-blue-500"
             >
-              Create an account
+              Add Product
             </button>
             <p className="mt-4 text-sm text-gray-500 sm:mt-0">
               Already have an account?
-              <a href="/" className="text-gray-700 underline">Log in</a>.
+              <Link to="/login" className="text-gray-700 underline">Log in</Link>.
             </p>
           </div>
 

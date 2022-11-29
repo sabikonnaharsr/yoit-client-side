@@ -8,6 +8,7 @@ import UseTitle from '../../../Hooks/UseTitle';
 
 
 const CategoryItemDetailsPage = () => {
+  
   UseTitle('Category Item Details')
   const { user } = useContext(AuthContext)
   const [booking, setBooking] = useState([]);
@@ -39,6 +40,20 @@ const CategoryItemDetailsPage = () => {
     .catch(error => console.error(error));
 
 
+   }
+
+   const handleReport = (id) => {
+    fetch(`http://localhost:5000/reportedProduct/${id}`, {
+      method: 'PUT'
+    })
+    .then(res => res.json())
+    .then(data => {console.log(data)
+
+      if(data.modifiedCount > 0){
+        toast.success('Product reported successfully')
+      }
+     
+    })
    }
 
     
@@ -93,9 +108,12 @@ const CategoryItemDetailsPage = () => {
                     alt=""
                   />
                 </div>
-                <Link to={`/payment/${_id}`}>checkout</Link>
+                 <div className='flex gap-4'>
+                   <Link to={`/payment/${_id}`}>checkout</Link>
+                   <button onClick={() => handleReport(_id)} to={`/reported/${_id}`}>Reported</button>
+                 </div>
             </div>
-        </div>
+         </div>
         <div>
        { 
         

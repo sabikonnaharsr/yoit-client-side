@@ -1,35 +1,54 @@
-import { Elements } from '@stripe/react-stripe-js';
-import { loadStripe } from '@stripe/stripe-js';
-import React from 'react';
-import { useLoaderData, useNavigation } from 'react-router-dom';
-import PaymentForm from './PaymentForm/PaymentForm';
+import { Elements } from "@stripe/react-stripe-js";
+import { loadStripe } from "@stripe/stripe-js";
+import React from "react";
+import { useLoaderData, useNavigation } from "react-router-dom";
+import UseTitle from "../../../Hooks/UseTitle";
+import PaymentForm from "./PaymentForm/PaymentForm";
 
 const Payment = () => {
+  UseTitle("Payment");
+  const product = useLoaderData();
+  const navigation = useNavigation();
 
-    const product = useLoaderData();
-    
-    const navigation = useNavigation();
-    
-    if(navigation.state === "loading"){
-        return 
-    }
-    const stripePromise = loadStripe(`${process.env.REACT_APP_STRIPE_PK}`);
-    return (
-        <div className='container mx-auto'>
-            <div>
-            <h3 className="text-3xl text-center">Payment</h3>
-            <h3 className="text-3xl text-center">title</h3>
-            <p className="text-xl">Please pay <strong>$price</strong> to persuce</p>
-            <div className='w-96 my-12 mx-auto'>
-                <Elements stripe={stripePromise}>
-                    <PaymentForm
-                        product={product}
-                    />
-                </Elements>
-            </div>
+  if (navigation.state === "loading") {
+    return;
+  }
+
+  const stripePromise = loadStripe(`${process.env.REACT_APP_STRIPE_PK}`);
+
+  return (
+    <div className="flex flex-col mt-10 justify-center items-center">
+      <div className="max-w-lg p-4 shadow-md dark:bg-gray-50 dark:text-gray-100">
+
+        <div className="space-y-4">
+          <div className="space-y-2">
+            <img
+              src={product.img}
+              alt=""
+              className="block object-cover object-center w-96 rounded-md h-46 dark:bg-gray-500"
+            />
+          </div>
+          <div className="space-y-2">
+            <a rel="noopener noreferrer" href="#" className="block">
+              <h3 className="text-xl font-semibold dark:text-violet-400">
+                {product.name}
+              </h3>
+              <p className="font-bold text-slate-800">price: ${product.seller_price}</p>
+            </a>
+            <p className="leading-snug dark:text-gray-400">
+              {product.bookingDate}
+            </p>
+          </div>
         </div>
-        </div>
-    );
-}
+      </div>
+
+      <div className="w-96 my-12 ">
+        <Elements stripe={stripePromise}>
+          <PaymentForm product={product} />
+        </Elements>
+      </div>
+    </div>
+  );
+};
 
 export default Payment;
