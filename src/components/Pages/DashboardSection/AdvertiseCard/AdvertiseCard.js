@@ -5,9 +5,10 @@ import UseTitle from "../../../Hooks/UseTitle";
 import BookingModal from "../../CategorySection/BookingModal/BookingModal";
 
 const AdvertiseCard = ({ product }) => {
+  console.log(product)
     UseTitle('Advertise')
   const [booking, setBooking] = useState([]);
-  console.log(booking);
+  // console.log(booking);
 
 
 
@@ -32,7 +33,7 @@ const AdvertiseCard = ({ product }) => {
                      <p>Price: £{product.seller_price} </p>
                   </div>
                   <div className="text-start">
-                    <p className="dark:text-gray-600 ">Status: {product?.status}</p>
+                    <p className="font-bold bg-yellow-400 rounded-md p-1 text-black">Status: {product?.status}</p>
                     <p className="dark:text-gray-600">Ratings: {product?.ratings}</p>
                     <span class="sr-only">g</span>
                  </div>
@@ -45,8 +46,8 @@ const AdvertiseCard = ({ product }) => {
                  </label>  */}
                  <div>
                         <Link to={`/productDetails/${product._id}`}>
-                          <button className=" py-1 px-3 text-pink-600 text-2xl">
-                          <FaArrowRight></FaArrowRight>
+                          <button className=" py-1 px-3 btn btn-primary mt-3 ">
+                         show details <FaArrowRight className="inline ml-2"></FaArrowRight>
                           </button>
                         </Link>
                       </div>         

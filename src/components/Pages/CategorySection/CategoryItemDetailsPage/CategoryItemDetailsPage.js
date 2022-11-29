@@ -8,12 +8,13 @@ import UseTitle from '../../../Hooks/UseTitle';
 
 
 const CategoryItemDetailsPage = () => {
-  
+
   UseTitle('Category Item Details')
   const { user } = useContext(AuthContext)
   const [booking, setBooking] = useState([]);
    const detailsProduct = useLoaderData();
    const {name, img, description, seller_price, old_price, ratings, location, _id} = detailsProduct;
+   console.log(detailsProduct)
 
    const handleWishlist = (product) => {
     const wishlistProduct = {...product, productId: product._id, email: user?.email || 'example@gmail.com', time: new Date().toLocaleString()}
@@ -109,8 +110,7 @@ const CategoryItemDetailsPage = () => {
                   />
                 </div>
                  <div className='flex gap-4'>
-                   <Link to={`/payment/${_id}`}>checkout</Link>
-                   <button onClick={() => handleReport(_id)} to={`/reported/${_id}`}>Reported</button>
+                   <button className='btn btn-primary font-semibold text-white' onClick={() => handleReport(_id)} to={`/reported/${_id}`}>Report</button>
                  </div>
             </div>
          </div>

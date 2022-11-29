@@ -2,8 +2,8 @@ import { useEffect, useState } from "react"
 
 
 const useAdmin = email => {
-    const [userType, setUserType] = useState(false);
-    const [isUserLoading, setIsUserLoading] = useState(true);
+    const [isAdmin, setAdmin] = useState(false);
+    const [isAdminLoading, setIsAdminLoading] = useState(true);
 
     useEffect(() => {
         if (email) {
@@ -12,13 +12,13 @@ const useAdmin = email => {
                 .then(data => {
                     
                
-                    setUserType(data);
-                    setIsUserLoading(false);
+                    setAdmin(data.isAdmin);
+                    setIsAdminLoading(false);
                 })
         }
     }, [email])
     
-    return [userType, isUserLoading]
+    return [isAdmin, isAdminLoading]
 }
 
 export default useAdmin;

@@ -46,8 +46,10 @@ const MyProduct = ({myProduct, refetch}) => {
                       <p className="dark:text-gray-600">Ratings: {myProduct?.ratings}</p>
                       <div className='flex gap-3 justify-between'>
 
-                      <button onClick={() => handleAdvertiseMyProduct(myProduct._id)} type="button" className="btn btn-ghost btn-xs  dark:text-gray-500 hover:text-sky-500 hover:font-bold ">{myProduct?.advertiseShow?"advertised": "advertise"}</button>     
-                      <button onClick={() => handleDeleteMyProduct(myProduct._id)} type="button" className="btn btn-ghost btn-xs dark:text-gray-500 hover:text-sky-500 hover:font-bold ">Delete</button>     
+                      {
+                        myProduct?.status === "sold" ?  <button className='btn  btn-warning btn-sm'>sold</button>: <button onClick={() => handleAdvertiseMyProduct(myProduct._id)} type="button" className="btn btn-primary btn-sm">{myProduct?.advertiseShow?"advertised": "advertise"}</button>     
+                      }
+                      <button onClick={() => handleDeleteMyProduct(myProduct._id)} type="button" className="btn btn-error btn-sm ">Delete</button>     
                     </div>   
                   </div>    
                 </div>  

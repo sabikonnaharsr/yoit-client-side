@@ -22,6 +22,9 @@ import AllUser from "../../Pages/AdminSection/AllUser/AllUser";
 import ReportedItem from "../../Pages/AdminSection/ReportedItem/ReportedItem";
 import MyProduct from "../../Pages/ProductSection/MyProduct/MyProduct";
 import MyOrders from "../../Pages/DashboardSection/MyOrders/MyOrders";
+import AdminRoute from "../AdminRoute/AdminRoute";
+import BuyerRoute from "../BuyerRoute/BuyerRoute";
+import SellerRoute from "../SellerRoute/SellerRoute";
 // import AdvertisedItem from "../../Pages/DashboardSection/AdveritsedItem/AdvertisedItem";
 // import AddProduct from "../../Pages/DashboardSection/AddProduct/AddProduct";
 
@@ -36,11 +39,11 @@ export const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: "signup",
+        path: "/signup",
         element: <SignUp />,
       },
       {
-        path: "login",
+        path: "/login",
         element: <Login />,
       },
       {
@@ -73,52 +76,55 @@ export const router = createBrowserRouter([
         element: <AddProduct></AddProduct>
       },
       {
-        path:'/payment/:id',
+        path:'/payments/:id',
         element:<Payment/>,
-        loader: ({params}) => fetch(`http://localhost:5000/productDetails/${params.id}`)
+        loader: ({params}) => fetch(`http://localhost:5000/payment/bookings/${params.id}`)
        }
     ],
   },
   {
     path: "/dashboard",
     element: (
-      <ProtectedRoutes>
+  
         <DashboardLayout></DashboardLayout>
-      </ProtectedRoutes>
+  
     ),
     children: [
       {
         path: "/dashboard/wishlist",
-        element: <Wishlist></Wishlist>,
+        element: <BuyerRoute><Wishlist></Wishlist></BuyerRoute>,
       },
       {
         path: "/dashboard/addProduct",
-        element: <AddProduct></AddProduct>
+        element: <SellerRoute><AddProduct></AddProduct></SellerRoute>
       },
       {
         path: "/dashboard/myproduct",
-        element: <MyProducts></MyProducts>
+        element: <SellerRoute><MyProducts></MyProducts></SellerRoute>
       },
       
       {
         path: '/dashboard/allSeller',
-        element: <AllSeller></AllSeller>
+        element: <AdminRoute><AllSeller></AllSeller></AdminRoute>
       },
       {
         path: "/dashboard/allBuyer",
-        element: <AllBuyer></AllBuyer>
+        element: <AdminRoute><AllBuyer></AllBuyer></AdminRoute>
       },
       {
         path: "/dashboard/allUsers",
-        element: <AllUser></AllUser>
+        element: <AdminRoute><AllUser></AllUser></AdminRoute>
       },
       {
         path: '/dashboard/reportedProduct',
-        element: <ReportedItem></ReportedItem>
+        element: <AdminRoute> <ReportedItem></ReportedItem></AdminRoute>
       },
       {
         path: '/dashboard/myOrder',
-        element: <MyOrders></MyOrders>
+        element: <BuyerRoute><MyOrders></MyOrders></BuyerRoute>
+      },
+      {
+
       }
       
     ],

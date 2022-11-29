@@ -88,7 +88,7 @@ const Login = () => {
           <input className="btn text-xl bg-white text-slate-600 mt-4 font-bold text-center input-primary w-full max-w-xs"value='Login' type='submit' />
           <div className="form-control text-slate-700 w-full max-w-xs"> 
             <small className="text-slate-700 text-sm">New to create account  
-            <Link className="text-blue-700 text-xs" to='/login'><Link to='/signup'> signup</Link></Link></small>
+            <Link to='/signup'> signup</Link></small>
 
              
           {/* divider */}

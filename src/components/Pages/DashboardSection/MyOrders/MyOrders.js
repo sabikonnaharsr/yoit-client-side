@@ -59,7 +59,7 @@ const MyOrders= () => {
                   <td>{order.location}</td>
      
                  <td> 
-                   <Link to={`/payment/${order._id}`}> <button
+                   <Link to={`/payments/${order._id}`}> <button
                     //   onClick={() =>  handlePayment(order._id)}
                       className=" btn-ghost bg-success btn w-14 btn-xs hover:text-white rounded-xxl hover:bg-pink-600 ">
                       Pay Now

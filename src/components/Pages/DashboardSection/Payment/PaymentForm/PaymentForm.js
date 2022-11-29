@@ -13,7 +13,7 @@ const PaymentForm = ({ product }) => {
   const elements = useElements();
 
   const { seller_price, name, _id, productId } = product;
-  console.log(product)
+  
 
   useEffect(() => {
     // Create PaymentIntent as soon as the page loads
@@ -27,7 +27,7 @@ const PaymentForm = ({ product }) => {
   }, [seller_price]);
 
   const handleSubmit = async (e) => {
-    console.log("fgjkdfgl");
+    
     e.preventDefault();
 
     if (!stripe || !elements) {
@@ -43,11 +43,14 @@ const PaymentForm = ({ product }) => {
       type: "card",
       card,
     });
+
+
     if (error) {
       setCardError(error.message);
     } else {
       setCardError("");
     }
+    
     setProcessing(true);
     const { paymentIntent, error: confirmError } =
       await stripe.confirmCardPayment(clientSecret, {
@@ -114,7 +117,7 @@ const PaymentForm = ({ product }) => {
           <button
             type="submit"
             disabled={!clientSecret || !stripe || processing}
-            className="bg-primary my-6 font-bold text-[#fff] text-center"
+            className="btn btn-secondary my-6 font-bold text-center"
           >
             pay
           </button>
