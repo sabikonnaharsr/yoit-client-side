@@ -1,11 +1,13 @@
 import { useQuery } from '@tanstack/react-query';
 import React, { useContext } from 'react';
 import { AuthContext } from '../../../Contexts/AuthProvider';
-import AdvertiseCard from '../../DashboardSection/AdvertiseCard/AdvertiseCard';
+// import AdvertiseCard from '../../DashboardSection/AdvertiseCard/AdvertiseCard';
+import MyProduct from '../MyProduct/MyProduct';
 
 
 const MyProducts = () => {
     const {user} = useContext(AuthContext)
+    console.log(user)
 
     const {data: myProducts = []} = useQuery({
         queryKey: ['myProducts', user?.email],
@@ -15,15 +17,16 @@ const MyProducts = () => {
             return data
         }
     })
+    
 
     return (
         <div>
            <div className='grid lg:grid-cols-3 md:grid-cols-2 gap-4 grid-cols-1'>
            {
-               myProducts.map(myProduct => <AdvertiseCard
+               myProducts.map(myProduct => <MyProduct
                key={myProduct._id}
                myProduct={myProduct}
-               ></AdvertiseCard>)
+               ></MyProduct>)
             }
             {
                 myProducts.length

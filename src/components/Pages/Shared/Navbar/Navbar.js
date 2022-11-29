@@ -146,7 +146,7 @@ const Navbar = () => {
                         </Link>
                         <Link
                           onClick={handleLogOut}
-                          className="lg:tracking-wide lg:text-gray-500 rounded-full lg:text-xs lg:font-bold btn btn-ghost bg-gray-100 px-5 py-2 text-sm hover:text-pink-600 text-gray-600"
+                          className="rounded-full btn btn-ghost lg:text-xs lg:font-bold bg-slate-700 hover:text-pink-600 px-5 py-2 text-sm  lg:tracking-wide lg:text-gray-200"
                         >
                           Signout
                         </Link>
@@ -154,17 +154,12 @@ const Navbar = () => {
                     ) : (
                       <Link
                         to="/login"
-                        className="lg:tracking-wide lg:text-gray-500 rounded-full lg:text-xs lg:font-bold btn btn-ghost bg-gray-100 px-5 py-2 text-sm  hover:text-pink-600 text-gray-600"
+                        className="rounded-full btn btn-ghost lg:text-xs lg:font-bold bg-slate-700 hover:text-pink-600 px-5 py-2 text-sm  lg:tracking-wide lg:text-gray-200"
                       >
                         Login
                       </Link>
                     )}
-                    <Link
-                      to="/signUp"
-                      className="rounded-full btn btn-ghost lg:text-xs lg:font-bold bg-slate-700 hover:text-pink-600 px-5 py-2 text-sm  lg:tracking-wide lg:text-gray-200"
-                    >
-                      Signup
-                    </Link>
+                   
                     {/* conditional rendering end */}
                   </div>
                 </div>

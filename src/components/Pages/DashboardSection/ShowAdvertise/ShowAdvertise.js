@@ -24,20 +24,22 @@ const ShowAdvertise = ({ product }) => {
                 Old Price: £{product.old_price}{" "}
               </span>
             </p>
-            <p>Regular Price: £{product.seller_price} </p>
+            <p>Price: £{product.seller_price} </p>
           </div>
           <div className="text-start">
             <p className="dark:text-gray-600 ">Status: {product?.status}</p>
             <p className="dark:text-gray-600">Ratings: {product?.ratings}</p>
             <span class="sr-only">g</span>
-            <label
+           
+          </div>
+          
+        </div>
+        <label
               htmlFor="booking-modal"
-              className="hover:text-pink-600 tracking-wider btn-xs btn btn-ghost mb-3 uppercase text-slate-700"
+              className="hover:text-pink-600 hover:font-bold tracking-wider btn-xs btn btn-ghost mb-3 uppercase text-slate-700"
             >
               Advertise
             </label>
-          </div>
-        </div>
       </a>
       <BookingModal booking={booking} setBooking={setBooking}></BookingModal>
     </div>

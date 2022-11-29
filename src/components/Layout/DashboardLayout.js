@@ -1,12 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link, Outlet } from "react-router-dom";
+import { AuthContext } from "../Contexts/AuthProvider";
+import useAdmin from "../Hooks/UseAdmin/UseAdmin";
 import Navbar from "../Pages/Shared/Navbar/Navbar";
 
 const DashboardLayout = () => {
+
+  const { user } = useContext(AuthContext);
+    const [userType] = useAdmin(user?.email)
+    console.log(userType)
   return (
     <div>
       <Navbar></Navbar>
-      <div className="drawer drawer-mobile h-96">
+      <div className="drawer drawer-mobile">
         <input
           id="dashboard-drawer"
           type="checkbox"
@@ -24,13 +30,13 @@ const DashboardLayout = () => {
               <Link>Users</Link>
             </li>
             <li className="bg-slate-200 text-sm font-bold uppercase">
-              <Link>Add Product</Link>
+              <Link to="/dashboard/addProduct">Add Product</Link>
             </li>
             <li className="bg-slate-200 text-sm font-bold uppercase">
               <Link to='/dashboard/myproduct'>My Products</Link>
             </li>
-            <li className="bg-slate-200 text-sm font-bold uppercase">
-              <Link>Wishlist</Link>
+            <li  className="bg-slate-200 text-sm font-bold uppercase">
+              <Link to="/dashboard/wishlist">Wishlist</Link>
             </li>
           </ul>
         </div>

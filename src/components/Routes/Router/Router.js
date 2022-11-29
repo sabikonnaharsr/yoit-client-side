@@ -16,6 +16,7 @@ import MyOrders from  "../../Pages/MyOrderSection/MyOrders/MyOrders"
 import AddProduct from "../../Pages/DashboardSection/AddProduct/AddProduct";
 import Payment from "../../Pages/DashboardSection/Payment/Payment";
 import MyProducts from "../../Pages/ProductSection/MyProducts/MyProducts";
+// import AdvertisedItem from "../../Pages/DashboardSection/AdveritsedItem/AdvertisedItem";
 // import AddProduct from "../../Pages/DashboardSection/AddProduct/AddProduct";
 
 
@@ -52,13 +53,9 @@ export const router = createBrowserRouter([
       },
       {
         path: "/productDetails/:id",
-        element: <CategoryItemDetailsPage></CategoryItemDetailsPage>,
+        element: <CategoryItemDetailsPage/>,
         loader: ({ params }) =>
           fetch(`http://localhost:5000/productDetails/${params.id}`),
-      },
-      {
-        path: "/wishlist",
-        element: <Wishlist></Wishlist>
       },
      
       {
@@ -85,7 +82,7 @@ export const router = createBrowserRouter([
     ),
     children: [
       {
-        path: "/dashboard",
+        path: "/dashboard/wishlist",
         element: <Wishlist></Wishlist>,
       },
       {
@@ -95,6 +92,10 @@ export const router = createBrowserRouter([
       {
         path: "/dashboard/myproduct",
         element: <MyProducts></MyProducts>
+      },
+      
+      {
+       
       }
     ],
   },

@@ -3,13 +3,14 @@ import { useQuery } from "@tanstack/react-query";
 import React, { useContext, useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { AuthContext } from "../../../Contexts/AuthProvider";
-import ShowAdvertise from "../ShowAdvertise/ShowAdvertise";
+import AdvertiseCard from "../AdvertiseCard/AdvertiseCard";
+
 // import AdvertiseCard from "../AdvertiseCard/AdvertiseCard";
 // import Spinner from "../../Shared/Spinner";
 // import BookingModal from "../BookingModal/BookingModal";
 
 
-const AdvertisedItem = () => {
+const Advertise = () => {
   const {user} = useContext(AuthContext)
   // const [categoriesData, setCategoriesData] = useState([]);
   // const [modalData, setModalData] = useState([]);
@@ -21,6 +22,7 @@ const AdvertisedItem = () => {
     isLoading,
   } = useQuery({
     queryKey: ["advertiseData"],
+    // http://localhost:5000/advertise-products
     queryFn: async () => {
       const res = await fetch('http://localhost:5000/advertise-products');
       const data = await res.json();
@@ -30,6 +32,7 @@ const AdvertisedItem = () => {
   if (isLoading) {
     return <div>loading...</div>;
   }
+  
 
   return (
     <div className="container mx-auto bg-white text-black px-4 pt-12">
@@ -44,10 +47,10 @@ const AdvertisedItem = () => {
       )}
      
         <div className="grid lg:grid-cols-3 justify-center gap-10 lg:w-[75%] mx-auto mt-10 py-16">
-          {advertiseData.map((product, inx) => (<ShowAdvertise
+          {advertiseData.map((product, inx) => (<AdvertiseCard
           key={inx}
           product={product}
-          ></ShowAdvertise>
+          ></AdvertiseCard>
             
           ))}
         </div>
@@ -63,5 +66,5 @@ const AdvertisedItem = () => {
   );
 };
 
-export default AdvertisedItem;
+export default Advertise;
 

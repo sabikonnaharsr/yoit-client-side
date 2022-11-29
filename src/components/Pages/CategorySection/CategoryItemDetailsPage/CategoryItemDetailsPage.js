@@ -1,17 +1,17 @@
 import React, { useContext, useState } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import BookingModal from '../BookingModal/BookingModal';
-import { FaGratipay,  FaStarHalfAlt, FaRegPlusSquare } from "react-icons/fa";
+import { FaGratipay,  FaStarHalfAlt, FaPlus, FaRegHeart} from "react-icons/fa";
 import { AuthContext } from '../../../Contexts/AuthProvider';
 import toast from "react-hot-toast";
+import UseTitle from '../../../Hooks/UseTitle';
 
 
 const CategoryItemDetailsPage = () => {
+  UseTitle('Category Item Details')
   const { user } = useContext(AuthContext)
   const [booking, setBooking] = useState([]);
-//  console.log(booking);
    const detailsProduct = useLoaderData();
-
    const {name, img, description, seller_price, old_price, ratings, location, _id} = detailsProduct;
 
    const handleWishlist = (product) => {
@@ -44,7 +44,7 @@ const CategoryItemDetailsPage = () => {
     
     return (
         <div>
-           <h1 className='text-5xl font-bold text-center mb-2 text-cyan-500 mt-10 hover:text-pink-600'>LE ITALIAN WIDE LEG OVERALL</h1>
+           <h1 className='text-5xl font-bold text-center mb-2 text-cyan-500 mt-10 hover:text-[#DEB597]'>LE ITALIAN WIDE LEG OVERALL</h1>
            <p className='text-2xl text-center text-cyan-500 hover:text-pink-600'>100% Cotton Made in Italy Designer Model Number: DS01B7527MAC Designer Color: 53</p>
            <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
              <div className="grid gap-12 row-gap-8 lg:grid-cols-2">
@@ -55,16 +55,17 @@ const CategoryItemDetailsPage = () => {
                       {name}
                       <br className="hidden md:block" />
                       </h2>
-                        <div className='flex gap-4 text-2xl hover:text-primary mb-3 text-slate-700'>
+                        <div className='flex text-2xl btn btn-ghost mb-3 '>
                          <div onClick={() => handleWishlist(detailsProduct)}>
-                         <FaGratipay></FaGratipay>
+                         <FaRegHeart></FaRegHeart>
                          </div>
-                        <label   
-                            onClick={() => setBooking(detailsProduct)} htmlFor="booking-modal" className="hover:text-primary mb-3 text-slate-700">
-                            <FaRegPlusSquare></FaRegPlusSquare>
-                        </label>
+                          <div>
+                           <label   
+                            onClick={() => setBooking(detailsProduct)} htmlFor="booking-modal" className="text-2xl btn btn-ghost mb-3 ">
+                            <FaPlus></FaPlus>
+                         </label>
+                        </div>
                       </div>
-                     
                      </div>
                     
                      <p className='font-semibold uppercase'>Release Price: {seller_price}</p>

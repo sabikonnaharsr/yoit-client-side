@@ -8,6 +8,7 @@ import { GithubAuthProvider, GoogleAuthProvider } from "firebase/auth";
 
 
 const SignUp = () => {
+  
     // react hooks form
     const { register, handleSubmit, formState: { errors } } = useForm();
     const {createUser, updateUser, googleSignIn, githubSingIn} = useContext(AuthContext)
@@ -16,13 +17,8 @@ const SignUp = () => {
     
     const handleSignup =(data, e)=> {
       e.preventDefault();
-      const form = e.target;
-      const firstName = form.firstName.value;
-      const lastName = form.lastName.value;
-      const email = form.email.value;
-      const photoURL = form.photoURL.value;
-      const password = form.password.value;
-      console.log(data,firstName, lastName, email, password, photoURL)
+      
+      console.log(data)
 
     setSignupError('')
     // user create
@@ -35,10 +31,10 @@ const SignUp = () => {
       const userInfo = {
         displayName: data.name
       }
-      form.reset();
+      // form.reset();
       updateUser(userInfo)
       .then(() => {
-        saveUser(data.name, data.email)
+        saveUser(data.name, data.email, data.accountType)
       })
       .catch(err=> console.log(err))
     })
@@ -78,8 +74,8 @@ const SignUp = () => {
 
 
   // user data save
-  const saveUser = (name, email) => {
-    const user = {name, email};
+  const saveUser = (name, email, accountType) => {
+    const user = {name, email, accountType};
     fetch('http://localhost:5000/users', {
       method: 'POST',
       headers: {
@@ -117,6 +113,15 @@ const SignUp = () => {
             <input type="lastName" {...register("lastName")} 
             className='input input-bordered input-primary w-full max-w-xs'/>
           </div>
+
+
+          
+          <label for="countries" class="block mb-2 text-sm font-medium text-gray-50 dark:text-white">Select an option</label>
+          <select {...register("accountType")} id="countries" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+            <option value="buyer"  selected>Buyer</option>
+            <option value="seller">Seller</option>
+          </select>
+
 
 
           {/* photoURL */}

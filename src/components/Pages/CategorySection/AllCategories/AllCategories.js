@@ -12,7 +12,7 @@ const AllCategories = () => {
         return data
     }
 })
-    console.log(categories);
+    
     return (
         <div>
            <div className='w-11/12 mx-auto py-16 grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-4"'>
