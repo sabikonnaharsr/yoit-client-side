@@ -1,19 +1,27 @@
 <!-- my project name -->
-## Resell Product
+## Yoit
 
 
 <!-- About this project -->
 
-## some details..
+## Some details..
 - i am going to describe about mine project
 - ### Technologies
-- React , React Tailwind , daisyui, hyper
+- TAILWIND, JAVASCRIPT, REACT JS 
+- MONGODB , NODE JS, FIREBASE,   REST API
+
 - React Router Dom
 - React , toast
 - Firebase Authentication
 - Context Api
 - react-photo-view
 
+# Tools: 
+- React, React Tailwind,  daisyui, 
+- hyper, React , Router , Dom, 
+- React, toast, Firebase, Authentication, 
+- Context Api, react-photo-view
+- React , toast
 
 
 ### Best Feature
@@ -35,6 +43,12 @@
 <!-- here is my live link of my project -->
 ## live link: https://bytecode-velocity-client.web.app
 
-#admin-email:nahar@gmail.com
-admin-password:12ABCabc&&
+# admin-email: nahar@gmail.com
+# admin-password: 12ABCabc&&
+
+# seller-email: n@gmail.com
+# pass: 12ABCabc&&
+
+# buyer-email: bb@gamil.com
+# pass: 12ABCabc&&
 
