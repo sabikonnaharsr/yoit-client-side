@@ -3,11 +3,10 @@ import React, { useContext } from "react";
 import { AuthContext } from "../../../Contexts/AuthProvider";
 import UseTitle from "../../../Hooks/UseTitle";
 
-
 const Wishlist = () => {
-  UseTitle('Wishlist');
+  UseTitle("Wishlist");
   const { user } = useContext(AuthContext);
-  const url = `http://localhost:5000/get-wishlist`;
+  const url = `https://byte-code-velocity.vercel.app/get-wishlist`;
   const { data: bookings = [] } = useQuery({
     queryKey: ["bookings", user?.email],
     queryFn: async () => {
@@ -15,12 +14,10 @@ const Wishlist = () => {
       const data = await res.json();
       return data;
     },
-
   });
 
-
   return (
-    <div>
+    <div className="grid gird-cols-1 lg:grid-cols-3 md:grid-cols-2">
       <h2 className="text-slate-500 text-3xl mt-10 text-center mb-3 font-bold uppercase">
         Please select your product
       </h2>

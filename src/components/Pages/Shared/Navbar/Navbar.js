@@ -145,7 +145,8 @@ const Navbar = () => {
                           Dashboard
                         </Link>
                         <Link
-                          to="/login"
+                         
+                         to="/login"
                           onClick={handleLogOut}
                           className="rounded-full btn btn-ghost lg:text-xs lg:font-bold bg-slate-700 hover:text-pink-600 px-5 py-2 text-sm  lg:tracking-wide lg:text-gray-200"
                         >

@@ -33,4 +33,8 @@
 
 
 <!-- here is my live link of my project -->
-## live link:  
+## live link: https://bytecode-velocity-client.web.app
+
+#admin-email:nahar@gmail.com
+admin-password:12ABCabc&&
+

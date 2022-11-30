@@ -7,7 +7,7 @@ const AllCategory = ({ category }) => {
 
   return (
     <div>
-      <div className="max-w-sm bg-white border border-gray-200 shadow-md dark:bg-gray-800 ">
+      <div className="  bg-white border border-gray-200 shadow-md dark:bg-gray-800 ">
         <Link to="/">
           <img className="" src={img} alt="" />
         </Link>

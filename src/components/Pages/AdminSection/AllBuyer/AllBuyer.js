@@ -1,30 +1,31 @@
-import { useQuery } from '@tanstack/react-query';
-import React from 'react';
+import { useQuery } from "@tanstack/react-query";
+import React from "react";
 
 const AllBuyer = () => {
-    const {
-        data: allBuyerData = [],
-        refetch,
-        isLoading,
-      } = useQuery({
-        queryKey: ["allBuyerData"],
-    
-        queryFn: async () => {
-          const res = await fetch('http://localhost:5000/allBuyers');
-          const data = await res.json();
-          return data;
-        },
-      });
-      if (isLoading) {
-        return <div>loading...</div>;
-      }
+  const {
+    data: allBuyerData = [],
+    refetch,
+    isLoading,
+  } = useQuery({
+    queryKey: ["allBuyerData"],
 
+    queryFn: async () => {
+      const res = await fetch(
+        "https://byte-code-velocity.vercel.app/allBuyers"
+      );
+      const data = await res.json();
+      return data;
+    },
+  });
+  if (isLoading) {
+    return <div>loading...</div>;
+  }
 
-    // 
-    return (
-        <div>
-                <div>
-            <div className="overflow-x-auto ">
+  //
+  return (
+    <div>
+      <div className="grid gird-cols-1 lg:grid-cols-3 md:grid-cols-2">
+        <div className="overflow-x-auto ">
           <table className="table w-full">
             {/*  <!-- head --> */}
             <thead>
@@ -49,15 +50,15 @@ const AllBuyer = () => {
                   </th>
                   <td>{buyer.name}</td>
                   <td>{buyer.email}</td>
-                  <td>{buyer.accountType}</td>          
+                  <td>{buyer.accountType}</td>
                 </tr>
               ))}
             </tbody>
           </table>
         </div>
-           </div>
-        </div>
-    );
+      </div>
+    </div>
+  );
 };
 
 export default AllBuyer;

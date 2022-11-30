@@ -5,11 +5,11 @@
 
 // const AdvertiseCards = () => {
 //     const {user} = useContext(AuthContext);
-    
+
 //     const {data: card = []} = useQuery({
 //         queryKey: ['card'],
 //         queryFn: async()=> {
-//             const res = await fetch(`http://localhost:5000/advertise-products/${user?.email}`);
+//             const res = await fetch(`https://byte-code-velocity.vercel.app/advertise-products/${user?.email}`);
 //             const data = await res.json();
 //             return data
 //         }

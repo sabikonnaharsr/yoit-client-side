@@ -1,47 +1,61 @@
-import React from 'react';
-import {  FaArrowRight } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { FaArrowRight } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
-const CategoryPageItem = ({product}) => {
-    const { name, img, description, price, ratings, _id} = product;
+const CategoryPageItem = ({ product }) => {
+  const { name, img, description, seller_price, ratings,postTime, old_price, _id,  } = product;
+  console.log(product);
 
-    return (
-        <div>
-        <div>
-          <div>
-            <a href="/" className="group mt-10 mb-10 relative block bg-slate-700">
-              <img
-                alt="Developer"
-                src={img}
-                className="absolute inset-0 h-full w-full object-cover opacity-75 transition-opacity group-hover:opacity-50"
-              />
-              <div className="relative p-8">
-                <p className="text-sm font-medium uppercase tracking-widest text-pink-500">
-                  {name}
-                </p>
-                <p className="text-2xl font-bold text-white">{price}</p>
-
-                <div className="mt-64">
-                  <div className="translate-y-8 transform opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100">
-                    <p className=" text-white text-xs uppercase">
-                     { description}
-                      <p className="text-sm text-white">Ratings: {ratings}</p>
-                      <div>
-                        <Link to={`/productDetails/${_id}`}>
-                          <button className=" py-1 px-3 text-pink-600 text-2xl">
-                          <FaArrowRight></FaArrowRight>
-                          </button>
-                        </Link>
-                      </div>
-                    </p>
-                  </div>
-                </div>
-              </div>
+  return (
+    <div>
+        <div className="max-w-sm bg-white border mb-5 border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
+          <a href="#">
+            <img
+              className="rounded-t-lg w-full"
+              src={img}
+              alt=""
+            />
+          </a>
+          <div className="p-5">
+            <a href="#">
+              <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                {name}
+              </h5>
+              <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">
+                price: ${seller_price}
+              </h5>
+              <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">
+                Old Price: ${old_price}
+              </h5>
             </a>
+            <p className="text-white">{postTime}</p>
+            <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
+              {description.length > 100? description.slice(0, 100) + '...': description}
+            </p>
+            <Link
+              to ={`/productDetails/${_id}`}
+              href="#"
+              className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            >
+             See Details
+              <svg
+                aria-hidden="true"
+                className="w-4 h-4 ml-2 -mr-1"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+            </Link>
           </div>
         </div>
     </div>
-    );
+  );
 };
 
 export default CategoryPageItem;

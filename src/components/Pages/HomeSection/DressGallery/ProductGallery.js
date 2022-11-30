@@ -20,7 +20,7 @@ const ProductGallery = () => {
                   destination
                 </span>
               </h2>
-              <p className="text-base uppercase text-gray-700 md:text-lg">
+              <p className="text-base hidden lg:block uppercase text-gray-700 md:text-lg">
                 Clothing serves many purposes: it can serve as protection from
                 the elements, rough surfaces, sharp stones, rash-causing plants,
                 insect bites,

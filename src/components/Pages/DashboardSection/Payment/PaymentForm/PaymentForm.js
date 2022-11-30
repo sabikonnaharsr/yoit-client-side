@@ -13,11 +13,10 @@ const PaymentForm = ({ product }) => {
   const elements = useElements();
 
   const { seller_price, name, _id, productId } = product;
-  
 
   useEffect(() => {
     // Create PaymentIntent as soon as the page loads
-    fetch("http://localhost:5000/create-payment-intent", {
+    fetch("https://byte-code-velocity.vercel.app/create-payment-intent", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ seller_price }),
@@ -27,7 +26,6 @@ const PaymentForm = ({ product }) => {
   }, [seller_price]);
 
   const handleSubmit = async (e) => {
-    
     e.preventDefault();
 
     if (!stripe || !elements) {
@@ -44,13 +42,12 @@ const PaymentForm = ({ product }) => {
       card,
     });
 
-
     if (error) {
       setCardError(error.message);
     } else {
       setCardError("");
     }
-    
+
     setProcessing(true);
     const { paymentIntent, error: confirmError } =
       await stripe.confirmCardPayment(clientSecret, {
@@ -75,7 +72,7 @@ const PaymentForm = ({ product }) => {
         transactionId: paymentIntent.id,
       };
       // post information in  database
-      fetch("http://localhost:5000/payments", {
+      fetch("https://byte-code-velocity.vercel.app/payments", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

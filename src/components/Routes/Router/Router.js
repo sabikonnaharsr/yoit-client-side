@@ -28,7 +28,6 @@ import SellerRoute from "../SellerRoute/SellerRoute";
 // import AdvertisedItem from "../../Pages/DashboardSection/AdveritsedItem/AdvertisedItem";
 // import AddProduct from "../../Pages/DashboardSection/AddProduct/AddProduct";
 
-
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -56,77 +55,110 @@ export const router = createBrowserRouter([
       },
       {
         path: "/categoryPage/:id",
-        element: <CategoryPage></CategoryPage>,
+        element: <ProtectedRoutes> <CategoryPage></CategoryPage></ProtectedRoutes>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/categories/${params.id}`),
+          fetch(
+            `https://byte-code-velocity.vercel.app/categories/${params.id}`
+          ),
       },
       {
         path: "/productDetails/:id",
-        element: <CategoryItemDetailsPage/>,
+        element: <ProtectedRoutes> <CategoryItemDetailsPage /></ProtectedRoutes>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/productDetails/${params.id}`),
+          fetch(
+            `https://byte-code-velocity.vercel.app/productDetails/${params.id}`
+          ),
       },
-     
+
       {
-        path: '/myOrders',
-        element: <MyOrders></MyOrders>
-      } ,
+        path: "/myOrders",
+        element: <MyOrders></MyOrders>,
+      },
       {
         path: "/addProduct",
-        element: <AddProduct></AddProduct>
+        element: <AddProduct></AddProduct>,
       },
       {
-        path:'/payments/:id',
-        element:<Payment/>,
-        loader: ({params}) => fetch(`http://localhost:5000/payment/bookings/${params.id}`)
-       }
+        path: "/payments/:id",
+        element: <Payment />,
+        loader: ({ params }) =>
+          fetch(
+            `https://byte-code-velocity.vercel.app/payment/bookings/${params.id}`
+          ),
+      },
     ],
   },
   {
     path: "/dashboard",
-    element: (
-  
-        <DashboardLayout></DashboardLayout>
-  
-    ),
+    element: <DashboardLayout></DashboardLayout>,
     children: [
       {
         path: "/dashboard/wishlist",
-        element: <BuyerRoute><Wishlist></Wishlist></BuyerRoute>,
+        element: (
+          <BuyerRoute>
+            <Wishlist></Wishlist>
+          </BuyerRoute>
+        ),
       },
       {
         path: "/dashboard/addProduct",
-        element: <SellerRoute><AddProduct></AddProduct></SellerRoute>
+        element: (
+          <SellerRoute>
+            <AddProduct></AddProduct>
+          </SellerRoute>
+        ),
       },
       {
         path: "/dashboard/myproduct",
-        element: <SellerRoute><MyProducts></MyProducts></SellerRoute>
+        element: (
+          <SellerRoute>
+            <MyProducts></MyProducts>
+          </SellerRoute>
+        ),
       },
-      
+
       {
-        path: '/dashboard/allSeller',
-        element: <AdminRoute><AllSeller></AllSeller></AdminRoute>
+        path: "/dashboard/allSeller",
+        element: (
+          <AdminRoute>
+            <AllSeller></AllSeller>
+          </AdminRoute>
+        ),
       },
       {
         path: "/dashboard/allBuyer",
-        element: <AdminRoute><AllBuyer></AllBuyer></AdminRoute>
+        element: (
+          <AdminRoute>
+            <AllBuyer></AllBuyer>
+          </AdminRoute>
+        ),
       },
       {
         path: "/dashboard/allUsers",
-        element: <AdminRoute><AllUser></AllUser></AdminRoute>
+        element: (
+          <AdminRoute>
+            <AllUser></AllUser>
+          </AdminRoute>
+        ),
       },
       {
-        path: '/dashboard/reportedProduct',
-        element: <AdminRoute> <ReportedItem></ReportedItem></AdminRoute>
+        path: "/dashboard/reportedProduct",
+        element: (
+          <AdminRoute>
+            {" "}
+            <ReportedItem></ReportedItem>
+          </AdminRoute>
+        ),
       },
       {
-        path: '/dashboard/myOrder',
-        element: <BuyerRoute><MyOrders></MyOrders></BuyerRoute>
+        path: "/dashboard/myOrder",
+        element: (
+          <BuyerRoute>
+            <MyOrders></MyOrders>
+          </BuyerRoute>
+        ),
       },
-      {
-
-      }
-      
+      {},
     ],
   },
 

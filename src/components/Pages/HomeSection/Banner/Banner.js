@@ -5,7 +5,7 @@ const Banner = () => {
     <div>
       <section>
         {/* this is picture */}
-        <div className="mx-auto max-w-screen-2xl px-4 py-16 sm:px-6 lg:px-8">
+        <div className="mx-auto px-4 py-16 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:h-screen lg:grid-cols-2">
             <div className="relative z-10 lg:py-16">
               <div className="relative h-64 sm:h-80 lg:h-full">
