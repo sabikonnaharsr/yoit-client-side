@@ -24,7 +24,7 @@ const AllBuyer = () => {
   //
   return (
     <div>
-      <div className="grid gird-cols-1 lg:grid-cols-3 md:grid-cols-2">
+      <div>
         <div className="overflow-x-auto ">
           <table className="table w-full">
             {/*  <!-- head --> */}
