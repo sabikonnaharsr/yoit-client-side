@@ -17,7 +17,7 @@ const DashboardLayout = () => {
   console.log(isBuyer, isSeller, isAdmin);
 
   return (
-    <div>
+    <div className="min-h-screen">
       <Navbar></Navbar>
       <div className="drawer drawer-mobile">
         <input
@@ -31,20 +31,20 @@ const DashboardLayout = () => {
         </div>
         <div className="drawer-side ">
           <label htmlFor="dashboard-drawer" className="drawer-overlay"></label>
-          <ul className="menu p-4 w-80  text-base-content">
+          <ul className="menu p-4 w-80 bg-slate-100 text-base-content">
             {/*<!-- Sidebar content here --> */}
             {isAdmin && (
               <>
-                <li className="bg-slate-200 text-sm font-bold uppercase">
+                <li className=" text-sm font-bold uppercase">
                   <Link to="/dashboard/allSeller">All Seller</Link>
                 </li>
-                <li className="bg-slate-200 text-sm font-bold uppercase">
+                <li className=" text-sm font-bold uppercase">
                   <Link to="/dashboard/allBuyer">All Buyer</Link>
                 </li>
-                <li className="bg-slate-200 text-sm font-bold uppercase">
+                <li className=" text-sm font-bold uppercase">
                   <Link to="/dashboard/allUsers">All Users</Link>
                 </li>
-                <li className="bg-slate-200 text-sm font-bold uppercase">
+                <li className=" text-sm font-bold uppercase">
                   <Link to="/dashboard/reportedProduct">Reported Product</Link>
                 </li>
               </>
