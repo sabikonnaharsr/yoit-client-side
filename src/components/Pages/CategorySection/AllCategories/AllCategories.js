@@ -18,7 +18,7 @@ const AllCategories = () => {
 
   return (
     <div>
-      <div className='justify-between lg:px-20 px-3 grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-4 mb-6'>
+      <div className='justify-between my-24 lg:px-20 px-3 grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-4 mb-6'>
         {categories?.map((category) => (
           <AllCategory key={category._id} category={category}></AllCategory>
         ))}

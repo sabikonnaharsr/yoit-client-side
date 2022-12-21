@@ -43,12 +43,12 @@
 <!-- here is my live link of my project -->
 ## live link: https://bytecode-velocity-client.web.app
 
-# admin-email: nahar@gmail.com
-# admin-password: 12ABCabc&&
+- admin-email: nahar@gmail.com
+- admin-password: 12ABCabc&&
 
-# seller-email: n@gmail.com
-# pass: 12ABCabc&&
+- seller-email: n@gmail.com
+- pass: 12ABCabc&&
 
-# buyer-email: bb@gamil.com
-# pass: 12ABCabc&&
+- buyer-email: bb@gamil.com
+- pass: 12ABCabc&&
 

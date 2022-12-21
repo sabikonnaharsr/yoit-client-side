@@ -7,12 +7,8 @@ import AllCategories from "../../CategorySection/AllCategories/AllCategories";
 import Advertise from "../../DashboardSection/Adveritse/Advertise";
 import UseTitle from "../../../Hooks/UseTitle";
 
-
-
-
-
 const Home = () => {
-  UseTitle('Home')
+  UseTitle("Home");
   return (
     <div>
       <Banner></Banner>
