@@ -66,7 +66,7 @@ const CategoryItemDetailsPage = () => {
   };
 
   return (
-    <div className="bg-[#DEB597]">
+    <div>
       <h1 className="text-5xl font-bold text-center mb-2 text-cyan-500 mt-10 hover:text-[#DEB597]">
         LE ITALIAN WIDE LEG OVERALL
       </h1>
